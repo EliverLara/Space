@@ -3,7 +3,7 @@
  *********/
 list, listview {
   color: $text_color;
-  background-color: $base_color;
+  //background-color: $base_color;
   border-color: $borders_color;
 
   &:backdrop {
@@ -22,12 +22,6 @@ list, listview {
 }
 
 row {
-  padding: 5px 11px;
-  transition: all 150ms $ease-out-quad;
-
-  label {
-    padding-left: 8px;
-  }
 
   &:hover { transition: none; }
 
@@ -41,10 +35,6 @@ row {
     &:active { box-shadow: inset 0 2px 2px -2px transparentize(black, 0.8); }
 
     &:backdrop:hover { background-color: transparent; }
-
-    button.flat{
-      background-color: transparent;
-    }
 
     &:selected {
       &:active { box-shadow: inset 0 2px 3px -1px transparentize(black, 0.5); }

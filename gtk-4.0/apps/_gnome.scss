@@ -46,13 +46,13 @@
     }
   }
 
-    // Gnome 43 path-bar
+  // Gnome 43 path-bar
   #NautilusPathBar {
-    height: 22px;
-    // margin-top: 8px;
-    // margin-bottom: 8px;
-    @include button(normal-header);
-
+     //height: 24px;
+     margin-top: 2px;
+  
+    @include button(normal);
+ //   background-color: $sidebar_bg_color;
     .dim-label {
       color: transparent;
       margin-right: -5px;
@@ -62,13 +62,13 @@
     button {
       .horizontal > .dim-label {
         color: $fg_color;
-        padding: 3px 12px;
+        padding: 5.5px 12px;
         margin: 0;
         border-right: 1px solid $borders_color;
       }
       &:hover, &:focus {
         .dim-label {
-          @include button(hover-header, $selected_bg_color, #fff); 
+          @include button(hover, $selected_bg_color, $selected_fg_color); 
           border-radius: 0;
         }
       }
@@ -87,23 +87,28 @@
       border: none;
       margin: 0;
       padding: 0;
-      &:hover, &:active, &:checked {
-        color: $selected_bg_color;
+    }
+    
+    // Current directory options button
+    .flat.popup {
+      margin: 0;
+      &:hover, &:active, &:checked, &:active:hover, &:focus {
+        @include button(hover, $selected_bg_color, $selected_fg_color);
       }
     }
 
     // Selected dir
     .current-dir  {
-      label { padding: 1px 12px; }
+      label { padding: 5.5px 12px; }
 
-      label, image { @include button(active, $selected_bg_color, #fff); }
+      label, image { @include button(active, $selected_bg_color, $selected_fg_color); }
     }
 
     button.current-dir:only-child {
       image {
         margin-right: -6px;
         padding: 0px 0px 0px 12px;
-        border-radius: 4px 0px 0px 4px;
+        border-radius: 6px 0px 0px 6px;
       }
     }
   }
@@ -111,22 +116,24 @@
   // search entry
   #NautilusQueryEditor { 
 
-    margin-top: 8px;
-    margin-bottom: 8px;
-    min-height: 22px;
+   // margin-top: 4px;
 
-    #NautilusQueryEditorTag {
-      > button {
-        margin: 0;
-      }
-    }
+    // #NautilusQueryEditorTag {
+    //   > button {
+    //     margin: 0;
+    //   }
+    // }
 
     > menubutton > button {
-      min-width: 16px;
-      min-height: 16px;
-      margin: 4px;
+      // min-width: 16px;
+      // min-height: 16px;
+      // margin: 4px;
+      margin-right: -7px;
       -gtk-icon-size: 12px;
-      padding: 0 4px;
+      border-radius: 0px 6px 6px 0px;
+      border: none;
+      background-color: transparent;
+   //   padding: 0 4px;
       &:hover, &:active, &:checked {
         image { color: $selected_fg_color; }
       }

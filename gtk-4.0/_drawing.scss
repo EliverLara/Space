@@ -36,8 +36,8 @@
 // entries
 
 @function entry_focus_border($fc:$selected_bg_color) {
-  @if $variant == 'light' { @return $fc; }
-  @else { @return if($fc==$selected_bg_color, $selected_borders_color, darken($fc, 35%)); }
+  @if $variant == 'light' { @return $blue; }
+  @else { @return if($fc==$selected_bg_color, $blue, darken($fc, 35%)); }
 }
 
 
@@ -69,11 +69,12 @@
   @if $t==normal {
     color: $text_color;
     border-color: $borders_color;
-    background-color: $base_color;
+    background-color: $btn_bg;
     // for the transition to work the number of shadows in different states needs to match, hence the transparent shadow here.
   }
   @if $t==focus {
     border-color: entry_focus_border($fc);
+    box-shadow: 0px 0px 1px 1px $blue inset;
   }
   @if $t==insensitive {
     color: $insensitive_fg_color;
@@ -182,7 +183,7 @@
   }
 }
 
-@mixin button($t, $c:$base_color, $tc:$text_color, $edge: none) {
+@mixin button($t, $c:$btn_bg, $tc:$text_color, $edge: none) {
 //
 // Button drawing function
 //
@@ -207,16 +208,19 @@
     box-shadow: none;
   //  border: 1px solid $c;
     color: white;
-    border-radius: 100px;
+    &, label {
+      color:red !important;
+    }
+    border-radius: 6px;
     background: $suggested_bg_color; }
 
-    @if $t==rounded-red {
-      box-shadow: none;
-    //  border: 1px solid $c;
-      color: white;
-      border-radius: 100px;
-      background: $destructive_bg_color; 
-    }
+  @if $t==rounded-red {
+    box-shadow: none;
+  //  border: 1px solid $c;
+    color: white;
+    border-radius: 6px;
+    background: $destructive_bg_color; 
+  }
   
   @if $t==normal {
   //
@@ -225,8 +229,9 @@
     font-weight: normal;
     color: $tc;
    // outline-color: transparentize($tc, 0.7);
-    background-color: mix($bg_color, $base_color, 15%);
+    background-color: $btn_bg ;//mix($bg_color, $base_color, 15%);
     text-shadow: none;
+    border: 1px solid $borders_color;
   }
 
   @else if $t==hover {
@@ -239,36 +244,6 @@
     text-shadow: none;
     //@include _shadows(inset 0px 1px 0px 0px $top_highlight,inset 0px -1px 0px 0px $bottom_highlight);
   }
-
-  @if $t==normal-header {
-  //
-  // normal button headerbar look
-  //
-  color: if($tc==$text_color, $headerbar_fg_color, $tc);
-  // background-color: transparent;
-  border-radius: 4px;
-  text-shadow: none;
-  box-shadow: none;
-  border: 1px solid $borders_color;
-  font-weight: normal;
-  background: if( $variant == 'light', 
-                      linear-gradient(to bottom, $base_color, $bg_color),
-                      linear-gradient(to bottom, lighten($base_color, 12%), darken($bg_color, 2%))
-                  );
-}
-
-  @else if $t==hover-header {
-  //
-  // hovered button headerbar look
-  //
-  color: if($tc==$text_color, $selected_fg_color, $tc);
-  border-radius: 4px;
-  box-shadow: none;
-  text-shadow: none;
-  border-color: $selected_bg_color;
-  background-image: linear-gradient(to bottom, $selected_bg_color, darken($selected_bg_color, 20%));
-  //@include lines(up);
-}
 
 @else if $t==backdrop-header {
   //
@@ -433,10 +408,8 @@
    // border-color: transparent;
     background-color: transparent;
     background-image: none;
-    background-color: mix($bg_color, $base_color, 20%);
-   // border: 1px solid transparentize($tc, 0.7);
-    @include _shadows(inset 0 1px transparentize(white, 1),
-                      $_blank_edge);
+    box-shadow: none;
+    border: none;
 
     text-shadow: none;
     -gtk-icon-shadow: none;

@@ -3,11 +3,11 @@
  ***************/
 .background {
   color: $fg_color;
-  background-color: $bg_color;
+  background-color: $base_color;
 
   &:backdrop {
     color: $backdrop_fg_color;
-    background-color: $backdrop_bg_color;
+    background-color: $backdrop_base_color;
     text-shadow: none;
     -gtk-icon-shadow: none;
   }
@@ -64,11 +64,10 @@
   }
 }
 
-.view,
 textview {
-  text {
+   > text {
     @extend %view;
-
+    background-color: transparent;
     selection { &:focus, & { @extend %selected_items; }}
   }
 }

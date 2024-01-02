@@ -1,6 +1,6 @@
 /****************
- * Text Entries *
- ****************/
+* Text Entries *
+****************/
 
 %entry,
 entry {
@@ -9,7 +9,7 @@ entry {
     padding-left: 8px;
     padding-right: 8px;
     border: 1px solid;
-    border-radius: 3px;
+    border-radius: 6px;
     transition: all 200ms $ease-out-quad;
 
     @include entry(normal);
@@ -51,8 +51,9 @@ entry {
 
     // entry error and warning style
     @each $e_type, $e_color in (error, $error_color),
-                               (warning, $warning_color) {
+                              (warning, $warning_color) {
       &.#{$e_type} {
+        @include entry(normal);
         color: $e_color;
         border-color: entry_focus_border($e_color);
 
@@ -103,13 +104,13 @@ entry {
     &:backdrop { background-color: transparent; }
   }
 
-   // linked entries
+  // linked entries
   .linked:not(.vertical) > & { @extend %linked; }
   .linked:not(.vertical) > &:focus-within + &,
   .linked:not(.vertical) > &:focus-within + button,
   .linked:not(.vertical) > &:focus-within + combobox > box > button.combo { border-left-color: entry_focus_border(); }
 
-  .linked:not(.vertical) > &:focus-within { border-color: entry_focus_border(); }
+  .linked:not(.vertical) > &:focus-within { @include entry(focus); }
 
   .linked:not(.vertical) > &:drop(active) + &,
   .linked:not(.vertical) > &:drop(active) + button,

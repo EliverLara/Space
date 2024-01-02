@@ -2,7 +2,7 @@
  * Switch *
  **********/
  $_switch_bg: if($variant == 'light', transparentize(black, 0.9), lighten($base_color, 10%));
- $_switch_slider_bg: if($variant == 'light', $base_color, lighten(black, 50%));
+ $_switch_slider_bg: if($variant == 'light', $btn_bg, lighten(black, 50%));
 
  switch {
   font-size: 1px;
@@ -32,10 +32,10 @@
 
   &:active,
   &:checked {
-    background-color: $selected_bg_color;
+    background: $suggested_bg_color;
 
     &:backdrop {
-      background-color: $backdrop_selected_bg_color;
+      opacity: 0.7;
 
       slider {
         &:backdrop {

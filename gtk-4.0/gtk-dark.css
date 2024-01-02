@@ -2478,48 +2478,47 @@ infobar {
   color: #ed254e;
   background-color: transparent; }
 
-/*************
- * Level Bar *
- *************/
-levelbar block {
-  min-width: 32px;
-  min-height: 6px; }
-levelbar.vertical block {
-  min-width: 6px;
+levelbar.horizontal trough > block {
+  min-height: 5px;
+  border-radius: 5px; }
+  levelbar.horizontal trough > block:dir(rtl) {
+    border-radius: 0 5px 5px 0; }
+  levelbar.horizontal trough > block:dir(ltr) {
+    border-radius: 5px 0 0 5px; }
+  levelbar.horizontal trough > block.empty, levelbar.horizontal trough > block.full {
+    border-radius: 5px; }
+levelbar.horizontal.discrete trough > block {
+  min-height: 2px;
+  margin: 1px;
+  min-width: 24px;
+  border-radius: 0; }
+  levelbar.horizontal.discrete trough > block:first-child {
+    border-radius: 2px 0 0 2px; }
+  levelbar.horizontal.discrete trough > block:last-child {
+    border-radius: 0 2px 2px 0; }
+levelbar.vertical trough > block {
+  min-width: 5px;
+  border-radius: 5px; }
+levelbar.vertical.discrete > trough > block {
+  min-width: -2px;
+  margin: 1px 0;
   min-height: 32px; }
-levelbar:backdrop {
-  transition: 200ms ease-out; }
-levelbar trough {
-  padding: 3px;
-  border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1); }
-  levelbar trough:backdrop {
-    background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1); }
-levelbar.horizontal.discrete block {
-  margin: 0 1px; }
-levelbar.vertical.discrete block {
-  margin: 1px 0; }
-levelbar block {
-  border-radius: 2px; }
-  levelbar block:backdrop {
-    box-shadow: none; }
-  levelbar block.low {
+levelbar > trough {
+  padding: 0; }
+levelbar > trough > block {
+  border: 1px solid; }
+  levelbar > trough > block.low {
+    border-color: #ff6a00;
     background-color: #ff6a00; }
-    levelbar block.low:backdrop {
-      border-color: #ff6a00; }
-  levelbar block.high, levelbar block:not(.empty) {
-    background-color: #00c1e4; }
-    levelbar block.high:backdrop, levelbar block:not(.empty):backdrop {
-      border-color: #00c1e4; }
-  levelbar block.full {
-    background-color: #00c1e4; }
-    levelbar block.full:backdrop {
-      border-color: #00c1e4; }
-  levelbar block.empty {
-    background-color: rgba(0, 0, 0, 0.14);
-    box-shadow: none; }
+  levelbar > trough > block.high, levelbar > trough > block:not(.empty) {
+    border-color: #495aff;
+    background-color: #495aff; }
+  levelbar > trough > block.full {
+    border-color: #ed254e;
+    background-color: #ed254e; }
+  levelbar > trough > block.empty {
+    background-color: #d1d7dd;
+    border-color: #d1d7dd; }
 
 /*********
  * Links *
@@ -3257,15 +3256,15 @@ progressbar trough, scale trough, scale fill {
 
 progressbar progress, scale highlight {
   border: none;
-  background-color: #dadada;
+  background-color: #495aff;
   border-radius: 3px;
   margin: 0; }
   progressbar progress:disabled, scale highlight:disabled {
     border: none;
     background-color: rgba(0, 0, 0, 0.14); }
   progressbar progress:backdrop, progressbar:backdrop progress, scale highlight:backdrop, progressbar progress:active:backdrop, progressbar:backdrop progress:active, scale highlight:active:backdrop {
-    border-color: #e7e7e7;
-    background-color: #e7e7e7; }
+    border-color: #6371ff;
+    background-color: #6371ff; }
     progressbar progress:backdrop:disabled, progressbar:backdrop progress:disabled, scale highlight:backdrop:disabled, progressbar progress:active:backdrop:disabled, progressbar:backdrop progress:active:disabled, scale highlight:active:backdrop:disabled {
       background-color: rgba(0, 0, 0, 0.06); }
 
@@ -3275,21 +3274,21 @@ scale {
   padding: 8px; }
   scale.horizontal trough,
   scale.horizontal progress {
-    min-height: 6px; }
+    min-height: 4px; }
   scale.vertical trough,
   scale.vertical progress {
-    min-width: 6px; }
+    min-width: 4px; }
   scale slider {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    background-color: #f5f5f5;
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    box-shadow: inset 0 1px #ed254e, 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition-property: background, border, box-shadow; }
     scale slider:active {
-      background-color: #dadada; }
+      background-color: #495aff; }
       scale slider:active:disabled {
         background-color: #e8ebed;
         box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.05); }
@@ -3321,19 +3320,22 @@ scale {
       border-color: transparent;
       background-color: transparent; }
   scale slider {
-    border-color: #f5f5f5;
-    border: none;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-width: 0px;
+    border-style: solid;
     border-radius: 12px;
-    background-color: #f5f5f5;
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.1); }
+    background-color: #fff;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 0px 5px rgba(0, 0, 0, 0.4); }
+    scale slider:hover {
+      box-shadow: 0px 0px 10px #495aff; }
     scale slider:active {
       border-color: #c1c1c1; }
     scale slider:disabled {
-      background-color: #cfcfcf;
+      background-color: #d9d9d9;
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.1); }
     scale slider:backdrop, scale slider:backdrop:disabled {
       transition: 200ms ease-out;
-      background-color: #cfcfcf;
+      background-color: #d9d9d9;
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.1); }
     row:selected scale slider:disabled, row:selected scale slider {
       border-color: #c1c1c1; }
@@ -3379,9 +3381,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3389,9 +3390,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3399,9 +3399,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3409,9 +3408,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3419,9 +3417,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3429,9 +3426,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3439,9 +3435,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -3449,9 +3444,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -3459,9 +3453,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -3469,9 +3462,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -3479,9 +3471,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -3489,9 +3480,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.horizontal.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -3499,9 +3489,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3509,9 +3498,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3519,9 +3507,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3529,9 +3516,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3539,9 +3525,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3549,9 +3534,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-before:not(.marks-after).fine-tune slider {
     margin: -7px; }
@@ -3559,9 +3543,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -3569,9 +3552,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -3579,9 +3561,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -3589,9 +3570,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -3599,9 +3579,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -3609,9 +3588,8 @@ scale {
     min-height: 16px;
     min-width: 16px;
     margin: -7px;
-    border: none;
     border-radius: 50%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0px 0px 1px 1px rgba(0, 0, 0, 0.3); }
   scale.vertical.marks-after:not(.marks-before).fine-tune slider {
     margin: -7px; }
@@ -4106,9 +4084,9 @@ switch {
     switch:backdrop:disabled {
       background-color: #e8ebed; }
   switch:active, switch:checked {
-    background-color: #dadada; }
+    background: linear-gradient(to right, #495aff 0%, #0014CC 100%); }
     switch:active:backdrop, switch:checked:backdrop {
-      background-color: rgba(218, 218, 218, 0.6); }
+      opacity: 0.7; }
       switch:active:backdrop slider:backdrop, switch:checked:backdrop slider:backdrop {
         box-shadow: none;
         background-color: rgba(245, 245, 245, 0.9);
@@ -4120,7 +4098,7 @@ switch {
     min-height: 12px;
     border-radius: 100%;
     transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    background-color: #f5f5f5;
+    background-color: #fff;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2); }
     switch slider:backdrop {
       padding: 2px;

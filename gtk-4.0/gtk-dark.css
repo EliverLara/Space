@@ -3171,13 +3171,10 @@ popover.menu {
       margin-left: 12px; }
     popover.menu accelerator:dir(rtl) {
       margin-right: 12px; }
-  popover.menu check label,
-  popover.menu radio label {
-    color: yellow; }
   popover.menu check:hover, popover.menu check:active,
   popover.menu radio:hover,
   popover.menu radio:active {
-    background-color: lime; }
+    background-color: transparent; }
   popover.menu radio {
     border-color: rgba(0, 0, 0, 0.13); }
     popover.menu radio:active {

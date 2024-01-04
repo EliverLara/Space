@@ -138,8 +138,7 @@ popover.menu {
   check,
   radio {
   //  @include check('menu', 'transparent', $text_color);
-    label { color: yellow;}
-    &:hover, &:active { background-color: lime; }
+    &:hover, &:active { background-color: transparent; }
   }
 
 

@@ -73,44 +73,14 @@ headerbar {
     &:backdrop,
     &:disabled,
     &:backdrop:disabled {
-      @include button(backdrop-header,red,transparentize($fg_color,0.8));
+      @include button(backdrop-header,$btn_bg,transparentize($fg_color,0.8));
     }
 
     &:backdrop {
       &:hover,
       &:active,
       &:checked {
-        @include button(hover-header,transparent,transparentize(white,0.7));
-      }
-    }
-
-    @each $b_type, $b_color in (suggested-action, $cyan),
-                               (destructive-action, $destructive_color) {
-      &.#{$b_type} {
-        font-weight: bold;
-        min-height: 24px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        border-radius: 4px;
-        @include button(normal, $b_color, white);
-        box-shadow: none;
-
-        &:hover { @include button(hover, $b_color, white); }
-
-        &:active { @include button(active, $b_color, white); }
-
-        &:disabled {
-          @include button(insensitive, $b_color, white);
-          label {color: transparentize(white,0.5);}
-        }
-
-        &:backdrop {
-          @include button(backdrop, $b_color, white);
-          border-radius: 3px;
-        }
-
-        &:backdrop:disabled { @include button(backdrop-insensitive, $b_color, white); }
-
+        @include button(hover-header,$selected_bg_color,transparentize(white,0.7));
       }
     }
 
@@ -139,18 +109,18 @@ headerbar {
     margin: 5px 0px;
     min-height: 20px;
     &:first-child {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
     }
 
     &:last-child {
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
       border-right-style: solid;
     }
 
     &:only-child {
-      border-radius: 4px;
+      border-radius: 6px;
       border-style: solid;
     }
   }
@@ -182,24 +152,24 @@ headerbar {
         margin-left: -1px;
         border-radius: 0px;
         &:active, &:checked {
-          border-radius: 0px 4px 4px 0px;
+          border-radius: 0px 6px 6px 0px;
         }
       }
       &:first-child {
-        border-radius: 4px 0px 0px 4px;
+        border-radius: 6px 0px 0px 6px;
         &:active, &:checked {
-          border-radius: 4px;
+          border-radius: 6px;
         }
       }
     }
     widget > .text-button:last-child{
-      border-radius: 0px 4px 4px 0px;
+      border-radius: 0px 6px 6px 0px;
       @include button(hover-header, $selected_bg_color, $selected_fg_color);
       &:backdrop, &:backdrop label {
         color: $backdrop_selected_fg_color;
       }
       &:only-child{
-        border-radius: 4px;
+        border-radius: 6px;
       } 
     }
   }

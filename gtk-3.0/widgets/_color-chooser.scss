@@ -129,7 +129,7 @@ colorswatch {
   row:selected & { box-shadow: 0 0 0 2px $selected_fg_color; }
 
   &#editor-color-sample {
-    border-radius: 4px;
+    border-radius: 6px;
 
     overlay { border-radius: 4.5px; }
   }

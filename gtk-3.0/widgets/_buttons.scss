@@ -27,9 +27,8 @@ button {
   @at-root %button_basic, & {
     min-height: 20px;
     min-width: 16px;
-    padding: 2px 6px;
-    border: 1px solid $borders_color;
-    border-radius: 4px;
+    padding: 4px 6px;
+    border-radius: 6px;
     transition: $button_transition;
 
     @include button(normal);
@@ -45,12 +44,8 @@ button {
       &:hover {
         transition: $button_transition;
         transition-duration: 500ms;
-
+        @include button(hover,$selected_bg_color,$selected_fg_color);
         &:active { transition: $button_transition; }
-      }
-      &.image-button:hover {
-        background-color: $selected_bg_color;
-        color: $selected_fg_color;
       }
     }
 
@@ -62,14 +57,7 @@ button {
     &:active,
     &:checked {
       @include button(active,darken($selected_bg_color,5%),$selected_fg_color);
-
       transition-duration: 50ms;
-    }
-    &:active {
-      color: $fg_color;
-    }
-    &:active:hover, &:checked {
-      color: $selected_fg_color;
     }
 
     &:backdrop {
@@ -119,7 +107,6 @@ button {
     &.text-button.image-button {
       padding-left: 8px;
       padding-right: 8px;
-      border-radius: 2px;
       label {
         padding-left: 8px;
         padding-right: 8px;
@@ -155,7 +142,7 @@ button {
     &.image-button { min-width: 32px; }
 
     color: $osd_fg_color;
-    border-radius: 5px;
+    border-radius: 6px;
     outline-color: transparentize($osd_fg_color, 0.7);  //FIXME: define a color var?
 
     @include button(osd);
@@ -208,10 +195,8 @@ button {
     &:backdrop { @include button(osd-backdrop); }
 
     &.flat {
-      @include button(osd);
-      &.image-button {
-        @include button(osd);
-      }
+      @include button(undecorated);
+
       box-shadow: none; //FIXME respect no edge on the button mixin
       text-shadow: 0 1px black;
       -gtk-icon-shadow: 0 1px black;
@@ -225,7 +210,7 @@ button {
         box-shadow: none;
       }
 
-      &:backdrop { @include button(osd-backdrop); }
+      &:backdrop { @include button(undecorated); }
 
       &:active,
       &:checked { @include button(osd-active); }
@@ -236,8 +221,7 @@ button {
   @each $b_type, $b_color in (suggested-action, $cyan),
                              (destructive-action, $destructive_color) {
     &.#{$b_type} {
-      border: none;
-      
+      border-radius: 6px;
       @if $b_type ==  suggested-action {
         @include button(rounded, $b_color, white);
       } @else {
@@ -250,7 +234,10 @@ button {
         //color: $b_color; //FIXME: does it work on the dark variant?
       }
 
-      &:hover { @include button(hover, $b_color, white); }
+      &:hover { 
+        @include button(hover, $b_color, white); 
+        opacity: 0.7;
+      }
 
       &:active,
       &:checked { @include button(active, $b_color, white); }
@@ -350,12 +337,19 @@ button {
 
   //inline-toolbar buttons
   .inline-toolbar &, .inline-toolbar &:backdrop {
-    border-radius: 2px;
+    border-radius: 6px;
     border-width: 1px;
     @extend %linked;
   }
 
-  .primary-toolbar & { -gtk-icon-shadow: none; } // tango icons don't need shadows
+ .primary-toolbar &, .primary-toolbar .raised & { // tango icons don't need shadows
+    -gtk-icon-shadow: none; 
+
+    &:hover,
+    &:focus {
+      @include button(hover,$selected_bg_color,$selected_fg_color);
+    }
+  }
 
   .linked > &,
   .linked > &:hover,
@@ -412,29 +406,29 @@ toolbar {
                                       // needed since those are flat...
   @include button(undecorated);
 
-  &:hover { color: $selected_bg_color; }
+  &:hover { color: $selected_fg_color; }
 
   &:active,
-  &:checked{ color: darken($selected_bg_color, 5%); }
+  &:checked{ color: darken($selected_fg_color, 5%); }
 
   &:disabled {
     color: $backdrop_text_color;
 
     &:active,
-    &:checked { color: transparentize(darken($selected_bg_color, 5%),0.7); }
+    &:checked { color: transparentize(darken($selected_fg_color, 5%),0.7); }
   }
 
   &:backdrop {
     color: $backdrop_text_color;
 
     &:active,
-    &:checked { color: darken($selected_bg_color, 5%); }
+    &:checked { color: darken($selected_fg_color, 5%); }
 
     &:disabled {
       color: $backdrop_text_color;
 
       &:active,
-      &:checked { color: transparentize(darken($selected_bg_color, 5%),0.7); }
+      &:checked { color: transparentize(darken($selected_fg_color, 5%),0.7); }
     }
   }
 }
@@ -454,25 +448,28 @@ toolbar.inline-toolbar toolbutton:backdrop {
   border: 1px solid $borders_color;
   border-radius: 0;
   border-right-style: none;
-  box-shadow: inset 0px 1px 0px 0px $top_highlight;
+  &:disabled {
+    @include button(insensitive, $base_color, $text_color); 
+    color: $insensitive_fg_color;
+  }
 }
 
 %linked {
   @extend %linked_middle;
 
   &:first-child {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
   }
 
   &:last-child {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
     border-right-style: solid;
   }
 
   &:only-child {
-    border-radius: 3px;
+    border-radius: 6px;
     border-style: solid;
   }
 }
@@ -486,18 +483,18 @@ toolbar.inline-toolbar toolbutton:backdrop {
   @extend %linked_vertical_middle;
 
   &:first-child {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
   }
 
   &:last-child {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     border-style: solid;
   }
 
   &:only-child {
-    border-radius: 3px;
+    border-radius: 6px;
     border-style: solid;
   }
 }
@@ -518,7 +515,7 @@ modelbutton.flat,
   min-height: 26px;
   padding-left: 5px;
   padding-right: 5px;
-  border-radius: 3px;
+  border-radius: 6px;
   outline-offset: -2px;
 
   @extend %undecorated_button;

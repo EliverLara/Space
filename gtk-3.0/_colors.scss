@@ -8,7 +8,8 @@ $bg_color: if($variant == 'light', #e0e4e8, #161925);
 $fg_color: if($variant == 'light', #31363d, #C3C7D1);
 $switch_bg: if($variant == 'light', #ffffff, transparentize(black,1));
 $shadow_color: rgba(162, 162, 165, 0.21);
-
+$main_dark_color: darken($bg_color, 2%);
+$_sidebar_color: darken($base_color, 2%);
 // Primary colors
 $lime: #71f79f;
 $red: #ed254e;
@@ -106,7 +107,7 @@ $backdrop_menu_color: if($variant == 'light', $backdrop_base_color, mix($backdro
 $scale_bg: if($variant == 'light', transparentize(black,0.86) ,transparentize(white,0.86));
 $scale_disabled_bg: if($variant == 'light', transparentize(black, 0.94) ,transparentize(white, 0.94));
 $suggested_bg_color: linear-gradient(to right, #495aff 0%, #0014CC 100%);
-$destructive_bg_color: linear-gradient(to right, #ee0979, #ff6a00);
+$destructive_bg_color: linear-gradient(to right, #ee0979, $red);
 $menu_shadow_color: if($variant == 'light', transparentize(rgb(110, 110, 110), 0.6), transparent);
 
 $btn_bg: #fff;

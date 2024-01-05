@@ -32,35 +32,11 @@
   }
 
   list { 
-    background-color: $base_color;  
-    @if $variant=='light' {
-    box-shadow: -10px 0px 12px rgba(162, 162, 165, 0.21) inset,
-                10px -7px 12px $base_color inset,
-                10px 7px 12px $base_color inset;
-    }
-              
+    background-color: $sidebar_bg_color;        
   }
   row{
     padding: 8px 14px;
     transition: all .12s ease-in;
-    &:selected{
-      background: if($variant == 'light', transparentize( lighten($bg_color, 3%), 0.4), transparentize(lighten($base_color, 7%), 0.4));
-      color: #ACACAC;
-      border-left: 4px solid $selected_bg_color;
-      &:backdrop{
-        color: $backdrop_selected_bg_color;
-        background: transparent;
-        label{
-          color: $backdrop_selected_bg_color;
-        }  
-      }
-      &:hover{
-        background-color: transparentize($selected_bg_color, 0.8);
-      }
-      label{
-        color: #ACACAC;
-      }
-    }
   }
 
     //elementary os file manager

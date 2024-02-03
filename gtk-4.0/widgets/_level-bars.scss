@@ -64,8 +64,8 @@ levelbar {
 
     &.high,
     &:not(.empty) {
-      border-color: $blue;
-      background-color: $blue;
+      border-color: $lime;
+      background-color: $lime;
     }
 
     &.full {
@@ -74,8 +74,8 @@ levelbar {
     }
 
     &.empty {
-      background-color: darken($bg_color, 5%);
-      border-color: darken($bg_color, 5%);
+      background-color: $scale_bg;
+      border-color: $borders_color;
     }
   }
 }

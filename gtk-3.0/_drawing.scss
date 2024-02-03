@@ -258,7 +258,7 @@
   //
   color: $tc;
 
-  background-color: $selected_bg_color;
+  background-color: lighten($selected_bg_color, 12%);
   text-shadow: none;
   border-radius: 6px;
   border: 1px solid $selected_borders_color;

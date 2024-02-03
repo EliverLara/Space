@@ -19,7 +19,7 @@
 
 %scale_highlight {
   border: none;
-  background-color: $blue;
+  background-color: transparentize(#fff, 0.3);
   border-radius: 3px;
   margin: 0;
 
@@ -30,8 +30,8 @@
 
   &:backdrop,
   &:active:backdrop {
-    border-color: lighten($blue, 5%);
-    background-color: lighten($blue, 5%);
+    border-color: lighten(transparentize(#fff, 0.3), 5%);
+    background-color: lighten(transparentize(#fff, 0.3), 5%);
     &:disabled {
       background-color: $scale_disabled_bg;
     }
@@ -40,7 +40,7 @@
 
 scale {
   // sizing
-  $_marks_lenght: 6px;
+  $_marks_length: 6px;
   $_marks_distance: 6px;
 
   min-height: 16px;
@@ -64,7 +64,7 @@ scale {
     min-width: 16px;
     margin: -7px;
 
-    background-color: $btn_bg;
+    background-color: white;
     box-shadow: inset 0 1px $red,
                 0px 0px 1px 1px rgba(0,0,0,0.1);
     border-radius: 12px;
@@ -73,7 +73,7 @@ scale {
     transition-property: background, border, box-shadow;
 
     &:active {
-      background-color: $blue;
+      background-color: transparentize(#fff, 0.3);
 
       &:disabled {
         background-color: $insensitive_bg_color;
@@ -145,7 +145,7 @@ scale {
     }
   }
 
-  $_scale_bg: if($variant == 'light', $btn_bg, lighten($bg_color, 10%));
+  $_scale_bg: if($variant == 'light', $btn_bg, #fff);
   $_scale_disabled_bg: darken($_scale_bg, 15%);
   slider {
     border-color: transparentize(#000, 0.8);
@@ -160,7 +160,7 @@ scale {
 
     &:hover { 
       @include button(hover-alt, $edge: $shadow_color);
-      box-shadow: 0px 0px 10px $blue;
+      box-shadow: 0px 0px 10px transparentize(#fff, 0.3);
     }
 
     &:active { border-color: $selected_borders_color; }
@@ -188,50 +188,53 @@ scale {
 
   value { color: gtkalpha(currentColor, 0.4); }
 
-  marks {
-    color: gtkalpha(currentColor, 0.4);
-
-    @each $marks_class, $marks_pos, $marks_margin in (top, top, bottom),
-                                                     (bottom, bottom, top),
-                                                     (top, left, right),
-                                                     (bottom, right, left) {
-      &.#{$marks_class} {
-        margin-#{$marks_margin}: $_marks_distance;
-        margin-#{$marks_pos}: -($_marks_distance + $_marks_lenght);
-      }
-    }
-  }
-
-  &.fine-tune marks {
-    @each $marks_class, $marks_pos, $marks_margin in (top, top, bottom),
-                                                     (bottom, bottom, top),
-                                                     (top, left, right),
-                                                     (bottom, right, left) {
-      &.#{$marks_class} {
-        margin-#{$marks_margin}: $_marks_distance;
-        margin-#{$marks_pos}: -($_marks_distance + $_marks_lenght - 3px);
-      }
-    }
-  }
-
   &.horizontal {
-    indicator {
-      min-height: $_marks_lenght;
-      min-width: 1px;
+    > marks {
+      color: gtkalpha(currentColor, 0.55);
+      &.top    { margin-bottom: $_marks_distance; }
+      &.bottom { margin-top: $_marks_distance; }
+
+      indicator {
+        background-color: currentColor;
+        min-height: $_marks_length;
+        min-width: 1px;
+      }
     }
 
-    &.fine-tune indicator { min-height: ($_marks_lenght - 3px); }
+    > value.left  { margin-right: 9px; }
+    > value.right { margin-left: 9px; }
+
+    &.fine-tune >marks {
+      &.top { margin-top: 3px; }
+      &.bottom { margin-bottom: 3px; }
+
+      indicator { min-height: ($_marks_length - 3px); }
+    }
   }
 
   &.vertical {
-    indicator {
-      min-height: 1px;
-      min-width: $_marks_lenght;
+    > marks {
+      color: gtkalpha(currentColor, 0.55);
+      &.top    { margin-right: $_marks_distance; }
+      &.bottom { margin-left: $_marks_distance; }
+
+      indicator {
+        background-color: currentColor;
+        min-height: 1px;
+        min-width: $_marks_length;
+      }
     }
 
-    &.fine-tune indicator { min-width: ($_marks_lenght - 3px); }
-  }
+    > value.top    { margin-bottom: 9px; }
+    > value.bottom { margin-top: 9px; }
 
+    &.fine-tune >marks {
+      &.top { margin-left: 3px; }
+      &.bottom { margin-right: 3px; }
+
+      indicator { min-height: ($_marks_length - 3px); }
+    }
+  }
   // *WARNING* scale with marks madness following
 
   // FIXME: OSD and selected list rows missing, I don't feel like adding the other 144 assets needed for those...

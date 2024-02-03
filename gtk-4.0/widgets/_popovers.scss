@@ -11,7 +11,7 @@ popover.background {
   > contents {
     $_popover_border: if($variant=='light', transparentize(black, 0.77), transparentize(black, 0.25));
 
-    background: if( $variant == 'light', linear-gradient(to bottom, $base_color 20%, $bg_color), linear-gradient(to bottom, lighten($base_color, 12%), darken($bg_color, 2%)));
+    background: if( $variant == 'light', linear-gradient(to bottom, $base_color 20%, $bg_color), linear-gradient(to bottom, $base_color, darken($bg_color, 2%)));
     background-clip: padding-box;
     border: 1px solid $borders_color;
     box-shadow: 0 4px 6px $menu_shadow_color;
@@ -122,6 +122,10 @@ popover.menu {
     background-color: $popover_bg_color;
     color: $fg_color;
     padding: 5px;
+    .view {
+      background-color: transparent;
+      row { margin: 0; }
+    }
   }
 
   &.background separator {
@@ -161,7 +165,7 @@ popover.menu {
     margin-right: -2px;
   }
 
-  modelbutton {
+  modelbutton, &.background > contents .view row {
     min-height: 30px;
     min-width: 40px;
     padding: 0 $_menu-padding;
@@ -174,7 +178,7 @@ popover.menu {
     &:selected:active {
       //@extend %selected_items;
       //color: $selected_fg_color;
-      background-color: darken($popover_hover_color, 10%); // matching buttons
+      background-color: lighten($popover_hover_color, 10%); // matching buttons
     }
   }
 

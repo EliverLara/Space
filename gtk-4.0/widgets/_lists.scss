@@ -3,7 +3,7 @@
  *********/
 list, listview {
   color: $text_color;
-  //background-color: $base_color;
+  background-color: lighten($base_color, 2%);
   border-color: $borders_color;
 
   &:backdrop {
@@ -144,4 +144,8 @@ columnview.complex {
       padding-bottom: 2px;
     }
   }
+}
+
+.boxed-list {
+  border: 1px solid $borders_color;
 }

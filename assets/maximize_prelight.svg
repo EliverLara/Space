@@ -24,11 +24,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="16"
-     inkscape:cx="-6.96875"
-     inkscape:cy="8"
+     inkscape:zoom="45.254834"
+     inkscape:cx="7.1926018"
+     inkscape:cy="7.9991455"
      inkscape:document-units="px"
-     inkscape:current-layer="g4147"
+     inkscape:current-layer="g4092"
      showgrid="true"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -73,7 +73,10 @@
            inkscape:connector-curvature="0" />
         <g
            id="g4147"
-           transform="matrix(1.3132489,0,0,1.3132489,-9.8625362,-52.033006)">
+           transform="matrix(1.3132489,0,0,1.3132489,-9.8625362,-52.033006)"
+           inkscape:export-filename="maximize_prelight.png"
+           inkscape:export-xdpi="109.71429"
+           inkscape:export-ydpi="109.71429">
           <path
              inkscape:connector-curvature="0"
              d="m 433.00051,40.81737 c 215.984,0 391.074,175.0938 391.074,391.0778 0,215.985 -175.09,391.075 -391.074,391.075 -215.988,0 -391.078202,-175.09 -391.078202,-391.075 0,-215.984 175.090202,-391.0778 391.078202,-391.0778"

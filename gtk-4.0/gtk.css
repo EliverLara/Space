@@ -680,7 +680,7 @@ button.destructive-action {
   box-shadow: none;
   color: white;
   border-radius: 6px;
-  background: linear-gradient(to right, #ee0979, #ff6a00); }
+  background: linear-gradient(to right, #ee0979, #ed254e); }
   button.destructive-action.flat {
     box-shadow: none;
     color: white;
@@ -1586,28 +1586,6 @@ spinbutton:not(.vertical), spinbutton.vertical > text, entry {
   entry image.right {
     padding-left: 6px;
     padding-right: 0; }
-  spinbutton:not(.vertical) undershoot.left, spinbutton.vertical > text undershoot.left,
-  entry undershoot.left {
-    background-color: transparent;
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
-    padding-left: 1px;
-    background-size: 1px 10px;
-    background-repeat: repeat-y;
-    background-origin: content-box;
-    background-position: left center;
-    border: none;
-    box-shadow: none; }
-  spinbutton:not(.vertical) undershoot.right, spinbutton.vertical > text undershoot.right,
-  entry undershoot.right {
-    background-color: transparent;
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
-    padding-right: 1px;
-    background-size: 1px 10px;
-    background-repeat: repeat-y;
-    background-origin: content-box;
-    background-position: right center;
-    border: none;
-    box-shadow: none; }
   spinbutton.flat:focus-within:not(.vertical), spinbutton.vertical > text.flat:focus-within, spinbutton.flat:not(.vertical), spinbutton.vertical > text.flat,
   entry.flat:focus-within,
   entry.flat {
@@ -1887,109 +1865,69 @@ actionbar > revealer > box {
 scrolledwindow viewport.frame {
   border-style: none; }
 scrolledwindow overshoot.top {
-  background-image: radial-gradient(farthest-side at top, #e3e3e3 85%, rgba(227, 227, 227, 0)), radial-gradient(farthest-side at top, #e3e3e3, rgba(227, 227, 227, 0));
-  background-size: 100% 5%, 100% 100%;
+  background-image: radial-gradient(farthest-side at top, rgba(0, 0, 0, 0.13) 85%, rgba(0, 0, 0, 0)), radial-gradient(farthest-side at top, rgba(49, 54, 61, 0.07), rgba(49, 54, 61, 0));
+  background-size: 100% 3%, 100% 50%;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: top;
   background-color: transparent;
   border: none;
   box-shadow: none; }
   scrolledwindow overshoot.top:backdrop {
-    background-image: radial-gradient(farthest-side at top, #e3e3e3 85%, rgba(227, 227, 227, 0));
-    background-size: 100% 5%;
+    background-image: radial-gradient(farthest-side at top, rgba(138, 140, 143, 0.217) 85%, rgba(138, 140, 143, 0));
+    background-size: 100% 3%;
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: top;
     background-color: transparent;
     border: none;
     box-shadow: none; }
 scrolledwindow overshoot.bottom {
-  background-image: radial-gradient(farthest-side at bottom, #e3e3e3 85%, rgba(227, 227, 227, 0)), radial-gradient(farthest-side at bottom, #e3e3e3, rgba(227, 227, 227, 0));
-  background-size: 100% 5%, 100% 100%;
+  background-image: radial-gradient(farthest-side at bottom, rgba(0, 0, 0, 0.13) 85%, rgba(0, 0, 0, 0)), radial-gradient(farthest-side at bottom, rgba(49, 54, 61, 0.07), rgba(49, 54, 61, 0));
+  background-size: 100% 3%, 100% 50%;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: bottom;
   background-color: transparent;
   border: none;
   box-shadow: none; }
   scrolledwindow overshoot.bottom:backdrop {
-    background-image: radial-gradient(farthest-side at bottom, #e3e3e3 85%, rgba(227, 227, 227, 0));
-    background-size: 100% 5%;
+    background-image: radial-gradient(farthest-side at bottom, rgba(138, 140, 143, 0.217) 85%, rgba(138, 140, 143, 0));
+    background-size: 100% 3%;
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: bottom;
     background-color: transparent;
     border: none;
     box-shadow: none; }
 scrolledwindow overshoot.left {
-  background-image: radial-gradient(farthest-side at left, #e3e3e3 85%, rgba(227, 227, 227, 0)), radial-gradient(farthest-side at left, #e3e3e3, rgba(227, 227, 227, 0));
-  background-size: 5% 100%, 100% 100%;
+  background-image: radial-gradient(farthest-side at left, rgba(0, 0, 0, 0.13) 85%, rgba(0, 0, 0, 0)), radial-gradient(farthest-side at left, rgba(49, 54, 61, 0.07), rgba(49, 54, 61, 0));
+  background-size: 3% 100%, 50% 100%;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left;
   background-color: transparent;
   border: none;
   box-shadow: none; }
   scrolledwindow overshoot.left:backdrop {
-    background-image: radial-gradient(farthest-side at left, #e3e3e3 85%, rgba(227, 227, 227, 0));
-    background-size: 5% 100%;
+    background-image: radial-gradient(farthest-side at left, rgba(138, 140, 143, 0.217) 85%, rgba(138, 140, 143, 0));
+    background-size: 3% 100%;
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: left;
     background-color: transparent;
     border: none;
     box-shadow: none; }
 scrolledwindow overshoot.right {
-  background-image: radial-gradient(farthest-side at right, #e3e3e3 85%, rgba(227, 227, 227, 0)), radial-gradient(farthest-side at right, #e3e3e3, rgba(227, 227, 227, 0));
-  background-size: 5% 100%, 100% 100%;
+  background-image: radial-gradient(farthest-side at right, rgba(0, 0, 0, 0.13) 85%, rgba(0, 0, 0, 0)), radial-gradient(farthest-side at right, rgba(49, 54, 61, 0.07), rgba(49, 54, 61, 0));
+  background-size: 3% 100%, 50% 100%;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: right;
   background-color: transparent;
   border: none;
   box-shadow: none; }
   scrolledwindow overshoot.right:backdrop {
-    background-image: radial-gradient(farthest-side at right, #e3e3e3 85%, rgba(227, 227, 227, 0));
-    background-size: 5% 100%;
+    background-image: radial-gradient(farthest-side at right, rgba(138, 140, 143, 0.217) 85%, rgba(138, 140, 143, 0));
+    background-size: 3% 100%;
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: right;
     background-color: transparent;
     border: none;
     box-shadow: none; }
-scrolledwindow undershoot.top {
-  background-color: transparent;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
-  padding-top: 1px;
-  background-size: 10px 1px;
-  background-repeat: repeat-x;
-  background-origin: content-box;
-  background-position: center top;
-  border: none;
-  box-shadow: none; }
-scrolledwindow undershoot.bottom {
-  background-color: transparent;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
-  padding-bottom: 1px;
-  background-size: 10px 1px;
-  background-repeat: repeat-x;
-  background-origin: content-box;
-  background-position: center bottom;
-  border: none;
-  box-shadow: none; }
-scrolledwindow undershoot.left {
-  background-color: transparent;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
-  padding-left: 1px;
-  background-size: 1px 10px;
-  background-repeat: repeat-y;
-  background-origin: content-box;
-  background-position: left center;
-  border: none;
-  box-shadow: none; }
-scrolledwindow undershoot.right {
-  background-color: transparent;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
-  padding-right: 1px;
-  background-size: 1px 10px;
-  background-repeat: repeat-y;
-  background-origin: content-box;
-  background-position: right center;
-  border: none;
-  box-shadow: none; }
 scrolledwindow junction {
   border-color: transparent;
   border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.13) 1px, transparent 1px) 0 0 0 1/0 1px stretch;
@@ -5055,7 +4993,7 @@ button.raven-trigger {
       .raven .powerstrip button.image-button:first-child:active {
         background: #dadada; }
     .raven .powerstrip button.image-button:last-child {
-      background: linear-gradient(to right, #ee0979, #ff6a00); }
+      background: linear-gradient(to right, #ee0979, #ed254e); }
       .raven .powerstrip button.image-button:last-child:hover {
         background: rgba(237, 37, 78, 0.85); }
       .raven .powerstrip button.image-button:last-child:active {

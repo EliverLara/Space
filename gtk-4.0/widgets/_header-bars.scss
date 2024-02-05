@@ -283,9 +283,13 @@ headerbar {
   }
 }
 
- .sidebar-pane .top-bar  {
+.sidebar-pane .top-bar  {
   background-color: $sidebar_bg_color;
-
+  button.image-button.toggle {
+    @include button(undecorated);
+    &:hover { @include button(hover); }
+    &:active, &:checked { @include button(active); }
+  }
 }
 
  .content-pane .top-bar {

@@ -2334,6 +2334,23 @@ window.csd > .titlebar:not(headerbar) {
 
 .sidebar-pane .top-bar {
   background-color: #16181d; }
+  .sidebar-pane .top-bar button.image-button.toggle {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    border: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none; }
+    .sidebar-pane .top-bar button.image-button.toggle:hover {
+      color: #C3C7D1;
+      outline-color: rgba(195, 199, 209, 0.3);
+      background-color: #292C33;
+      text-shadow: none; }
+    .sidebar-pane .top-bar button.image-button.toggle:active, .sidebar-pane .top-bar button.image-button.toggle:checked {
+      color: #C3C7D1;
+      outline-color: rgba(195, 199, 209, 0.3);
+      background: #444955;
+      text-shadow: none; }
 
 .content-pane .top-bar {
   background-color: #1c1f25; }

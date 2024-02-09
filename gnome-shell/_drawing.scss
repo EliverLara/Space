@@ -4,17 +4,11 @@
 
 // drawing of depth/shadows
 
-  $depth: 0 1px 2px rgba(0, 0, 0, 0.10),
-          0 2px 3px rgba(0, 0, 0, 0.22);
-  $depth2: 0 1px 2px rgba(0, 0, 0, 0.15),
-           0 2px 3px rgba(0, 0, 0, 0.30);
-  $depth3: inset 0 1px 1px rgba(0, 0, 0, 0.06),
-           inset 0 1px 2px rgba(0, 0, 0, 0.20),
-           0px 1px 0px 0px rgba(255, 255, 255, 0.15);
-  $depth4: inset 0 1px 2px rgba(0, 0, 0, 0.10),
-           inset 0 2px 3px rgba(0, 0, 0, 0.22);
-  $depth5: inset 0 1px 2px rgba(0, 0, 0, 0.15),
-           inset 0 2px 3px rgba(0, 0, 0, 0.30);
+  $depth: 0 1px 2px rgba(0, 0, 0, 0.10);
+  $depth2: 0 1px 2px rgba(0, 0, 0, 0.15);
+  $depth3: inset 0 1px 1px rgba(0, 0, 0, 0.06);
+  $depth4: inset 0 1px 2px rgba(0, 0, 0, 0.10);
+  $depth5: inset 0 1px 2px rgba(0, 0, 0, 0.15);
   $depth6: 0 2px 4px 2px transparentize(black, 0.8);
 
 // generic drawing of more complex things
@@ -55,21 +49,25 @@
 // normal, focus, insensitive
 //
 
-@if $t==normal {
-  background-color: darken($bg_color, 14%);
-  border-color: $borders_color;
-}
-@if $t==focus { 
-  border-color: $selected_bg_color; 
-  box-shadow: none;
-}
-@if $t==hover {  
-  background-color: darken($bg_color, 18%);
-}
-@if $t==insensitive {
-  color: $insensitive_fg_color;
-  box-shadow: $depth;
-}
+  @if $t==normal {
+    background-color: transparentize(white, 0.88);
+    border-color: $borders_color;
+ 
+    @include _shadows($depth);
+
+  }
+  @if $t==focus { 
+    @include _shadows($depth);
+    border-color: $selected_bg_color; 
+  }
+  @if $t==hover {  
+    @include _shadows($depth);
+    background-color: transparentize(white, 0.85);
+  }
+  @if $t==insensitive {
+    color: $insensitive_fg_color;
+    box-shadow: $depth;
+  }
 }
 
 // buttons
@@ -149,35 +147,31 @@
   //
   // normal button
   //
+    $_bg: if($c!=$osd_bg_color, $c,  transparentize(white, 0.88));
 
     color: $fg_color;
-    background-color: darken($bg_color, 7%);
-    box-shadow: none;
-    border: none;
+    background-color: $_bg;
+    box-shadow: none !important;
+
   }
   @if $t==focus {
   //
   // focused button
   //
-    $_bg: if($c!=$osd_bg_color, transparentize($c, 0.5),
-                          $osd_bg_color);
-
-    color: $osd_fg_color;
-    box-shadow: none;
-    border: none;
-    background: darken($bg_color, 13%);
+    color: $selected_fg_color;
+    background-color: transparentize(white, 0.7);
+    box-shadow: none !important;
   }
 
   @else if $t==hover {
   //
   // active osd button
   //
-    $_bg: if($c!=$osd_bg_color, transparentize($c, 0.3),
-                            lighten($osd_bg_color,10%));
+    
 
-    color: $fg_color;
-    background-color: darken($bg_color, 13%);
-    box-shadow: none;
+    color: $selected_fg_color !important;
+    background-color: transparentize(white, 0.7) !important;
+    box-shadow: none !important;
   }
   @else if $t==active {
   //
@@ -185,15 +179,14 @@
   //
     $_bg: if($c!=$bg_color, $c, $selected_bg_color);
 
-    color: $selected_fg_color;
-    background-color: $selected_bg_color;
+    color: $selected_bg_color;
+    background-color: $_bg;
     // This should be none, but it's creating some issues with borders, so to
     // workaround it for now, use inset wich goes through a different code path.
     // see https://bugzilla.gnome.org/show_bug.cgi?id=752934
-    box-shadow: none;
-    border: none;
     text-shadow: none;
     icon-shadow: none;
+    box-shadow: none !important;
   }
   @else if $t==insensitive {
   //
@@ -224,8 +217,8 @@
   }
 }
 
-@mixin gradient($c1:#f8f8f8, $c2:rgb(223, 223, 223), $direction:vertical){
+@mixin gradient($c1: $g1, $c2: $g2, $dir: horizontal) {
   background-gradient-start: $c1;
   background-gradient-end: $c2;
-  background-gradient-direction: $direction;
+  background-gradient-direction: $dir;
 }

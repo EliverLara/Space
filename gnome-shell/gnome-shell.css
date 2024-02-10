@@ -132,19 +132,17 @@ StScrollBar {
 
 /* Slider */
 .slider {
-  color: white;
-  height: 20px;
-  border-radius: 16px;
-  -barlevel-height: 19px;
-  -barlevel-background-color: #dfdfdf;
-  -barlevel-border-width: 2px;
+  color: #495aff;
+  -barlevel-height: 4px;
+  -barlevel-background-color: rgba(49, 54, 61, 0.4);
+  -barlevel-border-width: 0;
   -barlevel-border-color: transparent;
   -barlevel-active-background-color: #495aff;
   -barlevel-active-border-color: transparent;
   -barlevel-overdrive-color: #9b1b32;
   -barlevel-overdrive-border-color: transparent;
   -barlevel-overdrive-separator-width: 0px;
-  -slider-handle-radius: 9.5px;
+  -slider-handle-radius: 8px;
   -slider-handle-border-width: 0;
   -slider-handle-border-color: transparent; }
 
@@ -1222,7 +1220,8 @@ StScrollBar {
 
 .window-picker {
   -horizontal-spacing: 16px;
-  -vertical-spacing: 16px; }
+  -vertical-spacing: 16px;
+  padding: 0 16px 16px; }
   .window-picker.external-monitor {
     padding: 16px; }
 

@@ -121,16 +121,14 @@ StScrollBar {
 
 /* Slider */
 
-$slider_size: 19px;
+$slider_size: 16px;
 
 .slider {
-  color: white;
-  height: 20px;
-  border-radius: 16px;
+  color: $selected_bg_color;
   // slider trough
-  -barlevel-height: 19px;
-  -barlevel-background-color: darken($bg_color, 8%); //background of the trough
-  -barlevel-border-width: 2px; 
+  -barlevel-height: 4px;
+  -barlevel-background-color: transparentize($fg_color, 0.6); //background of the trough
+  -barlevel-border-width: 0; 
   -barlevel-border-color: transparent; // trough border color
   // fill style
   -barlevel-active-background-color: $selected_bg_color;
@@ -1429,6 +1427,7 @@ $slider_size: 19px;
   .window-picker { //container around window thumbnails
     -horizontal-spacing: 16px;
     -vertical-spacing: 16px;
+    padding: 0 16px 16px;
 
     &.external-monitor { padding: 16px; }
   }

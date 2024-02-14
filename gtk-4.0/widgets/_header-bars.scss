@@ -285,6 +285,10 @@ headerbar {
 
  .sidebar-pane .top-bar  {
   background-color: $sidebar_bg_color;
+  button.image-button.toggle {
+    @include button(undecorated);
+    &:hover, &:active, &:checked { @include button(hover, $selected_bg_color, $selected_fg_color); }
+  }
 
 }
 

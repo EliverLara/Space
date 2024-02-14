@@ -2346,6 +2346,18 @@ window.csd > .titlebar:not(headerbar) {
 
 .sidebar-pane .top-bar {
   background-color: #ebedef; }
+  .sidebar-pane .top-bar button.image-button.toggle {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    border: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none; }
+    .sidebar-pane .top-bar button.image-button.toggle:hover, .sidebar-pane .top-bar button.image-button.toggle:active, .sidebar-pane .top-bar button.image-button.toggle:checked {
+      color: #000;
+      outline-color: rgba(0, 0, 0, 0.3);
+      background-color: #dadada;
+      text-shadow: none; }
 
 .content-pane .top-bar {
   background-color: #f5f5f5; }

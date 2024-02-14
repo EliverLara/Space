@@ -99,7 +99,7 @@
   @if lightness($c)>90% { @return white; }
   @else if lightness($c)>80% { @return transparentize(white, 0.3); }
   @else if lightness($c)>50% { @return transparentize(white, 0.5); }
-  @else if lightness($c)>40% { @return transparentize(white, 0.7); }
+  @else if lightness($c)>40% { @return $barlevel_active_bg; }
   @else { @return transparentize(white, 0.9); }
 }
 
@@ -145,39 +145,35 @@
   $_blank_edge: if($edge == none, none, _widget_edge(transparentize($edge,1)));
 
 
-  @if $t==normal {
+@if $t==normal {
   //
   // normal button
   //
+    $_bg: if($c!=$osd_bg_color, $c,  $gray);
 
     color: $fg_color;
-    background-color: darken($bg_color, 7%);
-    box-shadow: none;
-    border: none;
+    background-color: $_bg;
+    box-shadow: none !important;
+
   }
   @if $t==focus {
   //
   // focused button
   //
-    $_bg: if($c!=$osd_bg_color, transparentize($c, 0.5),
-                          $osd_bg_color);
-
-    color: $osd_fg_color;
-    box-shadow: none;
-    border: none;
-    background: darken($bg_color, 13%);
+    color: $selected_fg_color !important;
+    background-color: $barlevel_active_bg;
+    box-shadow: none !important;
   }
 
   @else if $t==hover {
   //
   // active osd button
   //
-    $_bg: if($c!=$osd_bg_color, transparentize($c, 0.3),
-                            lighten($osd_bg_color,10%));
+    
 
-    color: $fg_color;
-    background-color: darken($bg_color, 13%);
-    box-shadow: none;
+    color: $selected_fg_color !important;
+    background-color: $barlevel_active_bg !important;
+    box-shadow: none !important;
   }
   @else if $t==active {
   //
@@ -186,14 +182,13 @@
     $_bg: if($c!=$bg_color, $c, $selected_bg_color);
 
     color: $selected_fg_color;
-    background-color: $selected_bg_color;
+    background-color: $_bg;
     // This should be none, but it's creating some issues with borders, so to
     // workaround it for now, use inset wich goes through a different code path.
     // see https://bugzilla.gnome.org/show_bug.cgi?id=752934
-    box-shadow: none;
-    border: none;
     text-shadow: none;
     icon-shadow: none;
+    box-shadow: none !important;
   }
   @else if $t==insensitive {
   //

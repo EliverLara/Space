@@ -30,40 +30,19 @@ stage {
 }
 
 .modal-dialog-linked-button {
-  padding: 6px;
-  margin: 5px 0px;
-  border: 1px solid $borders_color;
-  color: $fg_color;
-  @include gradient(#f8f8f8, #eeeeee);
-  font-weight: bold;
-  box-shadow: none;
-  text-shadow: none;
-  icon-shadow: none;
+  padding: 10px;
+  @include button(normal);
   &:insensitive { @include button(insensitive); }
-  &:active {
-   // @include button(active);
-  }
+  &:active { @include button(active); }
   &:focus {
     @include button(focus);
-    &:hover{
-      @include button(focus);
-    }
+    &:hover { @include button(focus); }
   }
-  &:hover {
-    @include button(hover);
-   
-  }
+  &:hover { @include button(hover); }
 
-  &:first-child { 
-    border-radius: 10px 0px 0px 10px; 
-    margin-left: 5px;  
-  }
-  &:last-child { 
-    border-radius: 0px 10px 10px 0px; 
-    margin-right: 5px;
-
-  }
-  &:first-child:last-child { border-radius: 10px; }
+  &:first-child { border-radius: 0px 0px 0px 10px; }
+  &:last-child { border-radius: 0px 0px 10px 0px; }
+  &:first-child:last-child { border-radius: 0px 0px 10px 10px; }
 }
 
 /* Entries */
@@ -121,17 +100,19 @@ StScrollBar {
 
 /* Slider */
 
-$slider_size: 16px;
+$slider_size: 19px;
 
 .slider {
-  color: $selected_bg_color;
+  color: white;
+  height: 20px;
+  border-radius: 16px;
   // slider trough
-  -barlevel-height: 4px;
-  -barlevel-background-color: transparentize($fg_color, 0.6); //background of the trough
-  -barlevel-border-width: 0; 
+  -barlevel-height: 19px;
+  -barlevel-background-color: $gray; //background of the trough
+  -barlevel-border-width: 2px; 
   -barlevel-border-color: transparent; // trough border color
   // fill style
-  -barlevel-active-background-color: $selected_bg_color;
+  -barlevel-active-background-color: $barlevel_active_bg;
   -barlevel-active-border-color: transparent;
   // overfill style (red in this case)
   -barlevel-overdrive-color: $destructive_color;
@@ -139,9 +120,10 @@ $slider_size: 16px;
   -barlevel-overdrive-separator-width: 0px;
   // slider handler
   -slider-handle-radius: $slider_size * 0.5; // half the size of the size
-  -slider-handle-border-width: 0;
-  -slider-handle-border-color: transparent; // because 0 width
+  -slider-handle-border-width: 1px;
+  -slider-handle-border-color: transparentize($bg_color, 0.7); // because 0 width
 }
+
 
 /* Check Boxes */
 
@@ -249,23 +231,11 @@ $slider_size: 16px;
 /* End Session Dialog */
 .end-session-dialog {
   border: none;
- 
-  & .modal-dialog-linked-button:first-child {
-    border-right: none;
-    &:hover {
-      border-right: none;
-    }
-  }
   & .modal-dialog-linked-button:last-child {
-    margin-right: 5px;
-    @include gradient(#ee0979, #ff6a00, horizontal);
-    color: white;
-    border-left: none;
     &:hover, &:focus {
-      border-left: none;
-      background: #d10869;
+      background: darken($error_color, 3%);
+      color: #fff;
     }
-
   }
 }
 
@@ -569,7 +539,7 @@ $slider_size: 16px;
 
 .popup-menu-content { 
   padding: 6px; 
-  background: darken($bg_color, 2%);
+  background: transparentize($bg_color, 0.1);
   border-radius: 12px;
   border: 1px solid $borders_color;
 }
@@ -586,7 +556,7 @@ $slider_size: 16px;
   &:active,
   &.selected,
   &:hover,
-  &:focus { background-color: darken($bg_color, 14%) !important; color: $fg_color; }
+  &:focus { @include button(hover); }
 
   &:checked { 
     background-color: transparentize($selected_bg_color, 0.2) !important;
@@ -666,17 +636,17 @@ $slider_size: 16px;
   .level {
     height: 0.4em;
     border-radius: 0.3em;
-    color: $osd_fg_color;
+    color: $red;
     border: 1px solid $borders_color;
 
     -barlevel-height: 0.4em;
     -barlevel-background-color: $gray;
-    -barlevel-active-background-color: $selected_bg_color;
+    -barlevel-active-background-color: $barlevel_active_bg;
     -barlevel-overdrive-color: $red;
     -barlevel-overdrive-separator-width: 0.2em; 
   }
   .level-bar {
-    background-color: $selected_bg_color;
+    background-color: $barlevel_active_bg;
     border-radius: 0.3em;
   }
 }
@@ -819,13 +789,14 @@ $slider_size: 16px;
 /* TOP BAR */
 
 #panel {
-  background-color: transparentize(darken($dracula,10%),0.05);
+  background-color: transparentize(white, 0.5);
   /* transition from solid to transparent */
   transition-duration: 500ms;
   font-weight: bold;
   height: 2.1em;
   padding: 0px 0px;
-
+  border: none;
+  box-shadow: none;
   &.unlock-screen,
   &.login-screen,
   &.lock-screen {
@@ -858,7 +829,6 @@ $slider_size: 16px;
     -minimum-hpadding: 6px;
     font-weight: bold;
     color: $topbar_color;
-    text-shadow: 0px 0px 2px rgba(230, 230, 230, 0.9);
     transition-duration: 100ms;
 
     .app-menu-icon {
@@ -876,12 +846,11 @@ $slider_size: 16px;
     }
 
     &:hover {
-      box-shadow: inset 0 0 0 100px darken($dracula,7%);
-      color: lighten($topbar_color, 10%);
+      box-shadow: inset 0 0 0 100px transparentize(darken($dracula,7%), 0.2);
       &.clock-display {
         box-shadow: none;
         .clock {
-          box-shadow: inset 0 0 0 100px darken($dracula,7%);
+          box-shadow: inset 0 0 0 100px transparentize(darken($dracula,7%), 0.2);
         }
       }
 
@@ -890,7 +859,7 @@ $slider_size: 16px;
     &:active, &:overview, &:focus, &:checked {
       // Trick due to St limitations. It needs a background to draw
       // a box-shadow
-      box-shadow: inset 0 0 0 100px $selected_bg_color;
+      box-shadow: inset 0 0 0 100px $barlevel_active_bg;
       color: #fff;
       text-shadow: none;
 
@@ -898,7 +867,7 @@ $slider_size: 16px;
         box-shadow: none;
 
         .clock {
-          box-shadow: inset 0 0 0 100px $selected_bg_color;
+          box-shadow: inset 0 0 0 100px $barlevel_active_bg;
         }
       }
     }
@@ -1134,11 +1103,11 @@ $slider_size: 16px;
       /* Message list */
       .message-list {
         border: none;
-        .message-title, .message-content, .message-body {
-          color: darken($fg_color,4%);
-        }
       }
-        .message-list-sections {
+      .message-title, .message-content, .message-body {
+        color:$fg_color;
+      }
+      .message-list-sections {
           spacing: 1em;
         }
 
@@ -1163,8 +1132,10 @@ $slider_size: 16px;
         }
 
         .message {
-          &:hover, &:focus { @include button(hover); }
           @include button(normal);
+          &:hover, &:focus { 
+            @include button(hover); 
+          }
           text-shadow: none;
         }
 
@@ -1180,31 +1151,12 @@ $slider_size: 16px;
             icon-size: 16px;
           }
 
-          .message-title {
-            color: darken($fg_color,5%);
-          }
-
-          .message-content {
-            color: $fg_color;
-            padding: 10px;
-            *:hover > StIcon,
-            *:focus > StIcon, {
-              color: $red;
-            }
-          }
-
           .message-close-button {
-            color: $fg_color;
-          }
-
-          .message-media-control {
-            padding: 12px;
-            color: darken($fg_color, 20%);
-
-            &:last-child:ltr { padding-right: 18px; }
-            &:last-child:rtl { padding-left: 18px; }
-            &:hover { color: $fg_color; }
-            &:insensitive { color: darken($fg_color,40%); }
+            color: $selected_fg_color;
+            background-color: transparentize($fg_color, 0.6);
+            border-radius: 99px;
+            > StIcon { color: $selected_fg_color; }
+            &:hover, &:active { background-color: $red; }
           }
 
 /* Media Controls */
@@ -1225,16 +1177,21 @@ $slider_size: 16px;
 
 }
 
-          .media-message-cover-icon {
-            icon-size: 48px !important;
-            &.fallback {
-              color: lighten($bg_color,10%);
-              background-color: $bg_color;
-              border: 2px solid $bg_color;
-              border-radius: 2px;
-              icon-size: 16px;
-              padding: 8px; }
-          }
+.media-message-cover-icon {
+  icon-size: 48px !important;
+  border-radius: 12px;
+
+  // when there is no artwork
+  &.fallback {
+    color: darken($fg_color, 17%);
+    background-color: $bg_color;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    icon-size: 32px !important; // 32px
+    padding: 16px;
+  }
+
+}
 
 
   /* World clocks */
@@ -1354,19 +1311,25 @@ $slider_size: 16px;
 //close buttons
 
 .window-close {
-  background-color: transparent;
-  background-image: url("assets/close-window.svg");
-  background-size: 32px;
-  border: none;
-  box-shadow: none;
-  color: transparent;
-  height: 32px;
-  width: 32px;
+  background-color: $red;
+  color: $selected_fg_color;
+  border-radius: 30px * 0.5 + 3px * 2;
+  padding: 2px;
+  height: 30px;
+  width: 30px;
+  //border: 2px solid darken($borders_color, 4%);
+  box-shadow: 0px 0px 10px $borders_color;
+
+  & StIcon { icon-size: 23px; }
+
+  &:hover { background-color: lighten($red, 3%); }
+
+  &:active { background-color: darken($red, 5%); }
 }
-  .window-close {
-    -shell-close-overlap: 16px;
-    &:rtl { -st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5); }
-  }
+.window-close {
+  -shell-close-overlap: 16px;
+  &:rtl { -st-background-image-shadow: 2px 2px 6px rgba(0,0,0,0.5); }
+}
 
 /* NETWORK DIALOGS */
 
@@ -1427,7 +1390,6 @@ $slider_size: 16px;
   .window-picker { //container around window thumbnails
     -horizontal-spacing: 16px;
     -vertical-spacing: 16px;
-    padding: 0 16px 16px;
 
     &.external-monitor { padding: 16px; }
   }
@@ -1498,7 +1460,7 @@ $slider_size: 16px;
   /* DASHBOARD */
 
   .dash-background {
-    background-color: transparentize($bg_color, 0.15);
+    background-color: transparentize(white, 0.5);
   }
   
   .dash-separator {
@@ -1585,10 +1547,10 @@ $slider_size: 16px;
   }
 
   .app-well-app-running-dot { //running apps indicator
-    width: 4px; height: 4px;
+    width: 13px; height: 3px;
     background-color: black;
-    border-radius: 10px !important;
-    box-shadow: 0px 0px 5px 4px transparentize(black,0.2);
+    border-radius: 50% !important;
+    box-shadow: 0px 0px 5px 4px transparentize(black, 0.8);
     margin-bottom: 2px;
   }
 
@@ -1751,26 +1713,38 @@ $slider_size: 16px;
     font-size: 11pt;
     width: 34em;
     margin: 5px;
-    border-radius: 12px;
+    border-radius: 14px;
     color: $_bubble_fg_color;
-    background-color:  darken($bg_color, 7%);
+    background-color: $_bubble_bg_color;
     border: 1px solid $borders_color;
-    //box-shadow: 0 1px 4px black;
-    &:hover, &:focus { background-color: darken($bg_color, 10%); box-shadow: none; }
+    box-shadow: 0 2px 14px 0px rgba(0, 0, 0, 0.201) !important;
+    &:hover, &:focus { 
+      background-color: transparentize($bg_color, 0.03) !important; 
+      box-shadow: 0 2px 14px 0px rgba(0, 0, 0, 0.301) !important;
+      border-radius: 14px;
+    }
 
     .notification-icon { padding: 5px; }
-    .notification-content { padding: 5px; spacing: 5px;}
+    .notification-content { padding: 5px; spacing: 5px; }
     .secondary-icon { icon-size: 1.09em; }
     .notification-actions {
-      background-color: darken($bg_color, 7%);
-      border-radius: 0px 0px 12px 12px;
+      background-color: transparent;
+      padding-top: 2px;
+      spacing: 1px;
+      border-radius: 0px 0px 14px 14px;
     }
     .notification-button {
-      @include button(normal);
+      background-color: transparent;
+      box-shadow: none !important;
+      border: none;
+      color: $_bubble_fg_color;
       padding: 7px;
-      &:first-child { border-radius: 0px 0 0 12px; border-right: none;}
-      &:last-child { border-radius: 0 0px 12px 0; }
-      &:hover, &focus { @include button(hover); }
+      &:first-child { border-radius: 0 0 0 14px; }
+      &:last-child { border-radius: 0 0 14px 0; }
+      &:hover, &focus { 
+        @include button(hover);
+        border: none;
+      }
     }
   }
   .summary-source-counter {
@@ -2252,7 +2226,7 @@ $slider_size: 16px;
 
 .quick-settings {
   padding: 14px;
-  border-radius: 12px;
+  border-radius: 22px;
 
   .icon-button, .button {
     color: $fg_color;
@@ -2263,9 +2237,9 @@ $slider_size: 16px;
 $base_padding: 6px;
 
 .quick-toggle {
-  border-radius: 99px;
+  border-radius: 16px;
   &:checked { 
-    @include button(active, lighten($bg_color, 12%));
+    @include button(active, $barlevel_active_bg);
     color: $selected_fg_color;
   }
 
@@ -2292,11 +2266,11 @@ $base_padding: 6px;
     min-width: auto;
     max-width: auto;
 
-    &:ltr { border-radius: 99px 0 0 99px; }
-    &:rtl { border-radius: 0 99px 99px 0; }
+    &:ltr { border-radius: 16px 0 0 16px; }
+    &:rtl { border-radius: 0 16px 16px 0; }
 
-    &:ltr:last-child { border-radius: 99px; }
-    &:rtl:last-child { border-radius: 99px; }
+    &:ltr:last-child { border-radius: 16px; }
+    &:rtl:last-child { border-radius: 16px; }
   }
 
 
@@ -2304,18 +2278,18 @@ $base_padding: 6px;
     @include button(normal);
     padding: $base_padding $base_padding*1.75;
     &:checked { 
-      @include button(active, darken($base_color, 3%));
+      @include button(active, darken($barlevel_active_bg, 3%));
       color: $selected_fg_color;
       border-width: 0;
     }
   
-    &:ltr { border-radius: 0 99px 99px 0; }
-    &:rtl { border-radius: 99px 0 0 99px; }
+    &:ltr { border-radius: 0 16px 16px 0; }
+    &:rtl { border-radius: 16px 0 0 16px; }
   }
 }
 
 .quick-toggle-menu {
-  background-color: darken($bg_color, 7%) !important;
+  background-color: transparentize($bg_color, 0.5) !important;
   border-radius: 12px;
   padding: $base_padding*2;
   margin: $base_padding*2 $base_padding*3 0;
@@ -2349,7 +2323,7 @@ $base_padding: 6px;
 
   .icon-button {
     @extend %button;
-    border-radius: 50px;
+    border-radius: 12px;
   }
 }
 

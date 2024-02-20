@@ -1,0 +1,16 @@
+.sidebar-pane,
+.sidebar,
+.navigation-sidebar {
+    &, &:backdrop { background: transparent; }
+    .top-bar {
+        &, headerbar { background: transparent; }
+    }
+}
+.content-pane { background-color: $base_color; }
+
+.background, .view { 
+    &, &:backdrop { background-color: transparentize($sidebar_bg_color, 0.15); } 
+}
+
+window { background-color: transparentize($sidebar_bg_color, 0.35); }
+

@@ -5871,4 +5871,26 @@ ConversationListView .view .cell, ConversationListView iconview .cell {
   border-bottom-width: 0;
   font-weight: bold; }
 
+.sidebar-pane, .sidebar-pane:backdrop,
+.sidebar,
+.sidebar:backdrop,
+.navigation-sidebar,
+.navigation-sidebar:backdrop {
+  background: transparent; }
+.sidebar-pane .top-bar, .sidebar-pane .top-bar headerbar,
+.sidebar .top-bar,
+.sidebar .top-bar headerbar,
+.navigation-sidebar .top-bar,
+.navigation-sidebar .top-bar headerbar {
+  background: transparent; }
+
+.content-pane {
+  background-color: #1c1f25; }
+
+.background, .background:backdrop, .view, iconview, .view:backdrop, iconview:backdrop {
+  background-color: rgba(22, 24, 29, 0.85); }
+
+window {
+  background-color: rgba(22, 24, 29, 0.65); }
+
 /*# sourceMappingURL=gtk-dark.css.map */

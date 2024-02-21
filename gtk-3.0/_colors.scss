@@ -110,4 +110,4 @@ $suggested_bg_color: linear-gradient(to right, #495aff 0%, #0014CC 100%);
 $destructive_bg_color: linear-gradient(to right, #ee0979, $red);
 $menu_shadow_color: if($variant == 'light', transparentize(rgb(110, 110, 110), 0.6), transparent);
 
-$btn_bg: #292C33;
+$btn_bg: transparentize(white, 0.88);

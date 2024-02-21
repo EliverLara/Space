@@ -139,7 +139,7 @@ headerbar.selection-mode button.titlebutton,
 // catch all extend :)
 
 %selected_items {
-  background-color: $selected_bg_color;
+  background-color: $btn_bg;
 
   @at-root %nobg_selected_items, & {
     color: $selected_fg_color;

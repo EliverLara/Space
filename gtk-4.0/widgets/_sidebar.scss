@@ -31,41 +31,6 @@
     transition: $backdrop_transition;
   }
 
-  // list { 
-  //   background-color: $sidebar_bg_color;  
-  //   @if $variant=='light' {
-  //   box-shadow: -10px 0px 12px rgba(162, 162, 165, 0.21) inset,
-  //               10px -7px 12px $base_color inset,
-  //               10px 7px 12px $base_color inset;
-  //   }
-              
-  // }
-  // row{
-  //   padding: 2px 14px;
-  //   transition: all .12s ease-in;
-  //   border-radius: 0;
-  //   margin: 0;
-  //   &:selected{
-  //     background: if($variant == 'light', transparentize( lighten($bg_color, 2%), 0.4), transparentize(lighten($base_color, 7%), 0.4));
-  //     color: #ACACAC;
-  //     border-left: 4px solid $selected_bg_color;
-  //     &:backdrop{
-  //       color: $backdrop_selected_bg_color;
-  //       background: transparent;
-  //       label{
-  //         color: $backdrop_selected_bg_color;
-  //       }  
-  //     }
-  //     &:hover{
-  //       background-color: transparentize($selected_bg_color, 0.8);
-  //     }
-  //     label{
-  //       color: #ACACAC;
-  //       font-weight: bold;
-  //     }
-  //   }
-  // }
-
     //elementary os file manager
     &.source-list{
       background: $base_color;
@@ -138,9 +103,7 @@ placessidebar {
       padding-right: 7px;
     }
     &:selected {
-      background:linear-gradient(to right,
-            darken($selected_bg_color, 4%) 40px,
-            darken($selected_bg_color, 4%) 40px,  darken($selected_bg_color, 1%) 97%);
+      background: $btn_bg;
     }
     label {
       padding-left: 8px;

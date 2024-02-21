@@ -238,7 +238,7 @@
   //
     color: $tc;
     outline-color: transparentize($tc, 0.7);
-    background-color: $c;
+    background-color: transparentize(white, 0.7);
     text-shadow: none;
     //@include _shadows(inset 0px 1px 0px 0px $top_highlight,inset 0px -1px 0px 0px $bottom_highlight);
   }
@@ -261,7 +261,7 @@
   //
   color: $tc;
   outline-color: transparentize($tc, 0.7);
-  background: if($c==$base_color, $selected_bg_color, lighten($c, 12%));
+  background: if($c==$base_color, $selected_bg_color, transparentize(white, 0.7));
   text-shadow: none;
  // @include _shadows(inset 0px 1px 0px 0px $top_highlight,inset 0px -1px 0px 0px $bottom_highlight);
 }
@@ -329,7 +329,7 @@
   //
   // normal osd button
   //
-    $_bg: if($c!=$base_color, transparentize($c, 0.5),
+    $_bg: if($c!=$base_color, transparentize(black, 0.8),
                             $osd_bg_color);
 
     color: $osd_fg_color;
@@ -345,7 +345,7 @@
   //
   // active osd button
   //
-    $_bg: if($c!=$base_color, transparentize($c, 0.3),
+    $_bg: if($c!=$base_color, transparentize(black, 0.5),
                             lighten($osd_bg_color, 12%));
 
     color: white;
@@ -361,7 +361,7 @@
   //
   // active osd button
   //
-    $_bg: if($c!=$base_color, $c, lighten($osd_bg_color, 6%));
+    $_bg: if($c!=$base_color, transparentize(black, 0.5), lighten($osd_bg_color, 6%));
 
     color: white;
     border-color: $osd_borders_color;

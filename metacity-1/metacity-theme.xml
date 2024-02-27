@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-	<name>Snow</name>
+	<name>Space-dark</name>
 	<author>Eliver Lara &lt;eliverlara@gmail&gt;</author>
-	<copyright>&#194;Eliver Lara, 2023</copyright>
-	<date>2023</date>
-	<description>Snow Window Theme</description>
+	<copyright>&#194;Eliver Lara, 2024</copyright>
+	<date>2024</date>
+	<description>Space-dark Window Theme</description>
 </info>
 
 
 <!-- CONSTANTS -->
-<constant name="C_titlebar" value="#dbdbdb" />
-<constant name="C_titlebar_unfocused" value="#dbdbdb" />
-<constant name="C_border_focused" value="#dbdbdb" />
-<constant name="C_border_unfocused" value="#dbdbdb" />
-<constant name="C_title_focused" value="#31363D" />
-<constant name="C_title_unfocused" value="#909296" />
+<constant name="C_titlebar" value="#0b0d0f" />
+<constant name="C_titlebar_unfocused" value="#0b0d0f" />
+<constant name="C_border_focused" value="#0b0d0f" />
+<constant name="C_border_unfocused" value="#0b0d0f" />
+<constant name="C_title_focused" value="#d8dee9" />
+<constant name="C_title_unfocused" value="#93979f" />
 
 <constant name="C_wm_button_background" value="#fc2" />
 <constant name="C_wm_button_foreground" value="#283141" />

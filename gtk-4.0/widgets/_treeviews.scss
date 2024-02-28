@@ -124,7 +124,7 @@ treeview.view {
 
   > header {
     > button {
-      $_column_header_color: mix(darken($fg_color, 20%), darken($base_color, 40%), 50%);
+      $_column_header_color: mix(lighten($fg_color, 20%), lighten($base_color, 40%), 50%);
 
       @extend %column_header_button;
 

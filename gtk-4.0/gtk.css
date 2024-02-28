@@ -4219,14 +4219,14 @@ treeview.view {
       background-color: #1b1d22; }
   columnview.view > header > button,
   treeview.view > header > button {
-    color: #454953;
+    color: #babeca;
     background-color: #1c1f25;
     font-weight: bold;
     text-shadow: none;
     box-shadow: none; }
     columnview.view > header > button:hover,
     treeview.view > header > button:hover {
-      color: #848892;
+      color: #bfc3ce;
       box-shadow: none;
       transition: none; }
     columnview.view > header > button:active,

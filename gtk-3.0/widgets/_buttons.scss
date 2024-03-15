@@ -218,7 +218,7 @@ button {
   }
 
   // Suggested and Destructive Action buttons
-  @each $b_type, $b_color in (suggested-action, $cyan),
+  @each $b_type, $b_color in (suggested-action, $blue),
                              (destructive-action, $destructive_color) {
     &.#{$b_type} {
       border-radius: 6px;
@@ -235,7 +235,7 @@ button {
       }
 
       &:hover { 
-        @include button(hover, $b_color, white); 
+       // @include button(hover, $b_color, white); 
         opacity: 0.7;
       }
 
@@ -267,10 +267,12 @@ button {
       }
 
       &:disabled {
-        @include button(insensitive, $b_color, white);
+        @include button(insensitive, $borders_color, white);
 
         &:active,
-        &:checked { @include button(insensitive-active, $b_color, white); }
+        &:checked { @include button(insensitive-active, $borders_color, white); }
+
+        border-color: $borders_color;
       }
 
       .osd & {

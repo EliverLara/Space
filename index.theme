@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Space
+Name=Space-light
 Comment=A light theme with some gradients
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Space
-MetacityTheme=Space
+GtkTheme=Space-light
+MetacityTheme=Space-light
 IconTheme=Boston
 ButtonLayout=:minimize,maximize,close

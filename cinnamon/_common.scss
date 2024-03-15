@@ -151,7 +151,7 @@ StScrollBar {
   -slider-active-background-color: $barlevel_active_bg;              //active trough fill
   -slider-active-border-color: transparentize($bg_color, 0.7);      //active trough border
   -slider-border-width: 1px;
-  -slider-handle-radius: 0.5em;
+  -slider-handle-radius: 9px;
   height: 19px;
   min-width: 15em;
   border: 0 solid transparent;
@@ -457,7 +457,7 @@ StScrollBar {
     -natural-hpadding: 6px;
     -minimum-hpadding: 2px;
     font-weight: bold;
-    color: green;
+    color: $fg_color;
     transition-duration: 100;
 
     &:hover {}
@@ -793,7 +793,7 @@ StScrollBar {
 
 .calendar-today-day-label {
   font-size: 1.75em;
-  color: $lime;
+  color: $fg_color;
   font-weight: bold;
   text-align: center;
   padding-bottom: .1em;
@@ -801,7 +801,7 @@ StScrollBar {
 
 .calendar-today-date-label {
   font-size: 1.1em;
-  color: $red;
+  color: $fg_color;
   font-weight: bold;
   text-align: center;
 }

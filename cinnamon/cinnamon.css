@@ -166,7 +166,7 @@ StScrollBar {
   -slider-active-background-color: rgba(0, 0, 0, 0.4);
   -slider-active-border-color: rgba(243, 243, 243, 0.3);
   -slider-border-width: 1px;
-  -slider-handle-radius: 0.5em;
+  -slider-handle-radius: 9px;
   height: 19px;
   min-width: 15em;
   border: 0 solid transparent;
@@ -423,7 +423,7 @@ StScrollBar {
   -natural-hpadding: 6px;
   -minimum-hpadding: 2px;
   font-weight: bold;
-  color: green;
+  color: #31363d;
   transition-duration: 100; }
 
 .system-status-icon {
@@ -663,14 +663,14 @@ StScrollBar {
 
 .calendar-today-day-label {
   font-size: 1.75em;
-  color: #71f79f;
+  color: #31363d;
   font-weight: bold;
   text-align: center;
   padding-bottom: .1em; }
 
 .calendar-today-date-label {
   font-size: 1.1em;
-  color: #ed254e;
+  color: #31363d;
   font-weight: bold;
   text-align: center; }
 

@@ -16,10 +16,8 @@ stage {
 /* WIDGETS */
 
 /* Buttons */
-.button, %button {
+.button, .icon-button, %button {
   @include button(normal);
-  border-radius: 6px;
-  padding: 6px 32px;
   font-weight: bold;
   &:focus { @include button(focus); }
   &:insensitive { @include button(insensitive); }
@@ -27,6 +25,11 @@ stage {
   &:hover {
     @include button(hover);
   }
+}
+
+.button {
+  border-radius: 6px;
+  padding: 6px 32px;
 }
 
 .modal-dialog-linked-button {
@@ -681,6 +684,7 @@ $slider_size: 19px;
   .switcher-list .item-box {
     padding: 8px;
     border-radius: 4px;
+    background-color: transparent;
   }
 
   .switcher-list .item-box:outlined {
@@ -991,6 +995,7 @@ $slider_size: 19px;
     }
 
     .calendar-month-label {
+      background-color: transparent;
       color: darken($fg_color,5%);
       font-weight: bold;
       padding: 8px 0;
@@ -1029,6 +1034,7 @@ $slider_size: 19px;
       border-radius: 99px;
       color: $fg_color !important;
       background-gradient-direction: none;
+      background-color: transparent;
 
       &:hover, &:focus { 
         background-color: darken($bg_color, 10%);
@@ -1040,11 +1046,12 @@ $slider_size: 19px;
         border-color: transparent; //avoid jumparound due to today
         box-shadow: none !important;
       }
-      &.calendar-day-heading {  //day of week heading
-        color: darken($fg_color,40%);
-        margin-top: 1em;
-        font-size: 70%;
-      }
+    }
+    .calendar-day-heading {  //day of week heading
+      background-color: transparent;
+      color: darken($fg_color,40%);
+      margin-top: 1em;
+      font-size: 70%;
     }
       .calendar-day { //border collapse hack - see calendar.js
         border-width: 0;
@@ -1423,6 +1430,21 @@ $slider_size: 19px;
 
   //search results
 
+  %search-section-content-item {  
+    background-color: transparent;
+    &:focus,
+    &:hover,
+    &:selected {
+      background-color: transparentize(darken($bg_color,15%),.1);
+      transition-duration: 200ms;
+    }
+  
+    &:active,
+    &:checked {
+      background-color: darken($bg_color, 15%);
+    }
+  }
+
   #searchResultsBin {
     max-width: 1000px;
   }
@@ -1455,6 +1477,12 @@ $slider_size: 19px;
   .list-search-provider-details { width: 150px; color: lighten($osd_fg_color,5%); margin-top: 0.24em; }
   .list-search-provider-content { spacing: 20px; }
   .search-provider-icon { padding: 15px; }
+
+  //Icon tile
+  .search-provider-icon,
+  .list-search-result {
+    @extend %search-section-content-item;
+  }
 
 
   /* DASHBOARD */
@@ -1510,21 +1538,13 @@ $slider_size: 19px;
     }
   }
 
-  //Icon tile
-  .search-provider-icon,
-  .list-search-result {
-    @extend %icon_tile;
-    &:active, &:checked { background-color: transparentize(darken($bg_color,15%),.1); }
-    &:focus, &:selected, &:hover {
-      background-color: darken($bg_color, 15%);
-      transition-duration: 200ms;
-    }
-  }
   .app-well-app,
   .app-well-app.app-folder,
   .show-apps,
-  .grid-search-result {
-    
+  .grid-search-result,
+  .overview-tile,
+  .dash-item-container .overview-tile {
+    background-color: transparent;
     border: none;
     & .overview-icon {
       @extend %icon_tile;
@@ -1546,7 +1566,7 @@ $slider_size: 19px;
 
   }
 
-  .app-well-app-running-dot { //running apps indicator
+  .app-well-app-running-dot, .app-grid-running-dot { //running apps indicator
     width: 13px; height: 3px;
     background-color: black;
     border-radius: 50% !important;
@@ -1555,6 +1575,7 @@ $slider_size: 19px;
   }
 
   %icon_tile {
+    background-color: transparent;
     color: $fg_color;
     padding: 7px 6px;
     border: none;
@@ -1565,7 +1586,7 @@ $slider_size: 19px;
   }
 
   /* App Folders */
-.app-well-app.app-folder {
+.app-well-app.app-folder, .app-folder .overview-icon {
   background-color: darken($bg_color, 25%);
   border-radius: 12px;
 }
@@ -1675,6 +1696,7 @@ $slider_size: 19px;
   }
 
 .page-navigation-arrow {
+  background-color: transparent;
   margin: 6px;
   padding: 18px;
   width: 24px;

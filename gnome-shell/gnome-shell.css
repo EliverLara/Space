@@ -809,9 +809,7 @@ StScrollBar {
 .message-list-section-title:focus,
 .events-button:hover,
 .events-button:focus {
-  color: #f7f7f7 !important;
-  background-color: rgba(0, 0, 0, 0.4) !important;
-  box-shadow: none !important;
+  background-color: silver;
   text-shadow: none; }
 .datemenu-today-button:active,
 .world-clocks-button:active,
@@ -849,7 +847,7 @@ StScrollBar {
 
 .calendar-month-label {
   background-color: transparent;
-  color: black;
+  color: black !important;
   font-weight: bold;
   padding: 8px 0; }
 
@@ -889,7 +887,7 @@ StScrollBar {
   background-gradient-direction: none;
   background-color: transparent; }
   .calendar-day-base:hover, .calendar-day-base:focus, .calendar-day:hover, .calendar-day:focus {
-    background-color: #dadada;
+    background-color: silver;
     box-shadow: none !important; }
   .calendar-day-base:active, .calendar-day-base:selected, .calendar-day:active, .calendar-day:selected {
     color: #f7f7f7 !important;
@@ -1381,8 +1379,7 @@ StScrollBar {
   height: 3px;
   background-color: black;
   border-radius: 50% !important;
-  box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 2px; }
+  box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.2); }
 
 .app-well-app .overview-icon,
 .app-well-app.app-folder .overview-icon,

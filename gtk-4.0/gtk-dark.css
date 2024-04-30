@@ -2443,7 +2443,7 @@ levelbar.vertical trough > block {
   min-width: 5px;
   border-radius: 5px; }
 levelbar.vertical.discrete > trough > block {
-  min-width: -2px;
+  min-width: 2px;
   margin: 1px 0;
   min-height: 32px; }
 levelbar > trough {

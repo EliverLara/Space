@@ -566,15 +566,11 @@ button.suggested-action {
   color: white;
   border-radius: 6px;
   background: linear-gradient(to right, #495aff 0%, #0014CC 100%); }
-  button.suggested-action, button.suggested-action label {
-    color: red !important; }
   .selection-mode windowcontrols button, button.suggested-action.flat {
     box-shadow: none;
     color: white;
     border-radius: 6px;
     background: linear-gradient(to right, #495aff 0%, #0014CC 100%); }
-    .selection-mode windowcontrols button, .selection-mode windowcontrols button label, button.suggested-action.flat, button.suggested-action.flat label {
-      color: red !important; }
   button.suggested-action:hover {
     color: white;
     outline-color: rgba(255, 255, 255, 0.3);
@@ -686,8 +682,6 @@ button.destructive-action {
     color: white;
     border-radius: 6px;
     background: linear-gradient(to right, #495aff 0%, #0014CC 100%); }
-    button.destructive-action.flat, button.destructive-action.flat label {
-      color: red !important; }
   button.destructive-action:hover {
     color: white;
     outline-color: rgba(255, 255, 255, 0.3);
@@ -2450,7 +2444,7 @@ levelbar.vertical trough > block {
   min-width: 5px;
   border-radius: 5px; }
 levelbar.vertical.discrete > trough > block {
-  min-width: -2px;
+  min-width: 2px;
   margin: 1px 0;
   min-height: 32px; }
 levelbar > trough {

@@ -226,9 +226,6 @@ button {
 
       &:hover { @include button(hover, $b_color, white); opacity: 0.9;}
 
-      &:active,
-      &:checked { @include button(active, $b_color, white); }
-
       &:backdrop,
       &.flat:backdrop {
         @include button(backdrop, $b_color, white);

@@ -577,11 +577,6 @@ button.suggested-action {
     background-color: #00c1e4;
     text-shadow: none;
     opacity: 0.9; }
-  button.suggested-action:active, button.suggested-action:checked {
-    color: white;
-    outline-color: rgba(255, 255, 255, 0.3);
-    background: #00c1e4;
-    text-shadow: none; }
   .selection-mode windowcontrols button:backdrop, button.suggested-action:backdrop, button.suggested-action.flat:backdrop {
     color: rgba(255, 255, 255, 0.4);
     outline-color: rgba(255, 255, 255, 0.3);
@@ -688,11 +683,6 @@ button.destructive-action {
     background-color: #e6133e;
     text-shadow: none;
     opacity: 0.9; }
-  button.destructive-action:active, button.destructive-action:checked {
-    color: white;
-    outline-color: rgba(255, 255, 255, 0.3);
-    background: #e6133e;
-    text-shadow: none; }
   button.destructive-action:backdrop, button.destructive-action.flat:backdrop {
     color: rgba(255, 255, 255, 0.4);
     outline-color: rgba(255, 255, 255, 0.3);

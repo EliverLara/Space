@@ -235,7 +235,6 @@
     outline-color: transparentize($tc, 0.7);
     background-color: if($c==$selected_bg_color, $c, lighten($c, 6%));
     text-shadow: none;
-    border: 1px solid if($c==$selected_bg_color, $selected_borders_color, $c);
     //@include _shadows(inset 0px 1px 0px 0px $top_highlight,inset 0px -1px 0px 0px $bottom_highlight);
   }
 
@@ -259,7 +258,7 @@
   background-color: lighten($selected_bg_color, 12%);
   text-shadow: none;
   border-radius: 6px;
-  border: 1px solid $selected_borders_color;
+  // border: 1px solid $selected_borders_color;
   box-shadow: none;
   // @include _shadows(inset 0px 1px 0px 0px $top_highlight,inset 0px -1px 0px 0px $bottom_highlight);
 }

@@ -284,8 +284,7 @@ button {
       color: #ffffff;
       outline-color: rgba(255, 255, 255, 0.3);
       background-color: #32363e;
-      text-shadow: none;
-      border: 1px solid #1b1d22; }
+      text-shadow: none; }
       notebook > header > tabs > arrow:hover:active,
       button.flat:hover:active {
         transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
@@ -295,7 +294,6 @@ button {
     outline-color: rgba(255, 255, 255, 0.3);
     background-color: #32363e;
     text-shadow: none;
-    border: 1px solid #1b1d22;
     -gtk-icon-effect: highlight; }
   notebook > header > tabs > arrow:active, notebook > header > tabs > arrow:checked,
   button:active,
@@ -304,7 +302,6 @@ button {
     background-color: #4d5360;
     text-shadow: none;
     border-radius: 6px;
-    border: 1px solid #1b1d22;
     box-shadow: none;
     transition-duration: 50ms; }
   notebook > header > tabs > arrow:backdrop, notebook > header > tabs > arrow:backdrop,
@@ -582,7 +579,6 @@ button.suggested-action {
     background-color: #4d5360;
     text-shadow: none;
     border-radius: 6px;
-    border: 1px solid #1b1d22;
     box-shadow: none; }
   .selection-mode button.titlebutton:backdrop, button.suggested-action:backdrop, button.suggested-action.flat:backdrop {
     color: rgba(255, 255, 255, 0.4);
@@ -689,7 +685,6 @@ button.destructive-action {
     background-color: #4d5360;
     text-shadow: none;
     border-radius: 6px;
-    border: 1px solid #1b1d22;
     box-shadow: none; }
   button.destructive-action:backdrop, button.destructive-action.flat:backdrop {
     color: rgba(255, 255, 255, 0.4);
@@ -808,8 +803,7 @@ button.destructive-action {
     color: #ffffff;
     outline-color: rgba(255, 255, 255, 0.3);
     background-color: #32363e;
-    text-shadow: none;
-    border: 1px solid #1b1d22; }
+    text-shadow: none; }
 
 .stack-switcher > button.needs-attention > label,
 .stack-switcher > button.needs-attention > image, stacksidebar row.needs-attention > label {
@@ -1481,8 +1475,7 @@ colorswatch#add-color-button {
       color: #C3C7D1;
       outline-color: rgba(195, 199, 209, 0.3);
       background-color: rgba(255, 255, 255, 0.12);
-      text-shadow: none;
-      border: 1px solid rgba(255, 255, 255, 0.12); }
+      text-shadow: none; }
     colorswatch#add-color-button overlay:backdrop {
       color: #a2a6af;
       outline-color: rgba(195, 199, 209, 0.3);
@@ -5930,14 +5923,12 @@ ConversationListView {
     color: #C3C7D1;
     outline-color: rgba(195, 199, 209, 0.3);
     background-color: rgba(255, 255, 255, 0.12);
-    text-shadow: none;
-    border: 1px solid rgba(255, 255, 255, 0.12); }
+    text-shadow: none; }
   #content_frame button:active, #content_frame button:checked {
     color: #C3C7D1;
     background-color: #4d5360;
     text-shadow: none;
     border-radius: 6px;
-    border: 1px solid #1b1d22;
     box-shadow: none; }
   #content_frame button:disabled {
     color: #a2a6af;
@@ -6040,7 +6031,6 @@ ConversationListView {
       background-color: #4d5360;
       text-shadow: none;
       border-radius: 6px;
-      border: 1px solid #1b1d22;
       box-shadow: none; }
       .nemo-window toolbar.primary-toolbar button:selected:backdrop, .nemo-window toolbar.primary-toolbar button:active:backdrop, .nemo-window toolbar.primary-toolbar button:checked:backdrop {
         color: rgba(255, 255, 255, 0.5);

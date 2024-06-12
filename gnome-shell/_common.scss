@@ -535,7 +535,7 @@ $slider_size: 19px;
     &:active,
     &.selected,
     &:hover,
-    &:focus { background-color: darken($bg_color, 11%) !important; color: $fg_color; }
+    &:focus { background-color: darken($bg_color, 11%) !important; color: $fg_color !important; }
   }
 
 }

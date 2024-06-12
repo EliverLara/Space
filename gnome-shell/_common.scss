@@ -539,7 +539,7 @@ $slider_size: 19px;
     &:active,
     &.selected,
     &:hover,
-    &:focus { background-color: lighten($bg_color, 9%) !important; color: $fg_color; }
+    &:focus { background-color: lighten($bg_color, 9%) !important; color: $fg_color !important; }
   }
 
 }

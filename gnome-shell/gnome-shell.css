@@ -488,7 +488,7 @@ StScrollBar {
       border-radius: 0 0 6px 6px; }
     .popup-sub-menu .popup-menu-item:active, .popup-sub-menu .popup-menu-item.selected, .popup-sub-menu .popup-menu-item:hover, .popup-sub-menu .popup-menu-item:focus {
       background-color: #292e37 !important;
-      color: #fefefe; }
+      color: #fefefe !important; }
 
 .popup-menu-content {
   padding: 6px;

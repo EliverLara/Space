@@ -5377,10 +5377,10 @@ window.background.budgie-settings-window.csd > box.horizontal > stack > scrolled
  * Calendar events *
 ********************/
 .color-light.timed label, .color-light .event-popover label {
-  color: #31363d;
+  color: #C3C7D1;
   opacity: 1; }
 .color-light label {
-  color: #31363d;
+  color: #16181d;
   opacity: 1; }
 
 .xfce4-panel {

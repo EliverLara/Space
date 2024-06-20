@@ -2532,14 +2532,14 @@ GraniteWidgetsWelcome {
       border-radius: 6px; }
   .titlebar .path-buttons-box,
   headerbar .path-buttons-box {
-    border: 1px solid #cdcdcd;
+    border: 1px solid #414348;
     min-height: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
     font-weight: normal;
-    color: #31363D;
-    border: 1px solid #cdcdcd;
-    background-color: #fff;
+    color: #C3C7D1;
+    border: 1px solid #414348;
+    background-color: #292C33;
     text-shadow: none;
     border-radius: 4px 0px 0px 4px; }
     .titlebar .path-buttons-box .dim-label, .titlebar .path-buttons-box label.separator, .titlebar .path-buttons-box .subtitle,
@@ -2552,10 +2552,10 @@ GraniteWidgetsWelcome {
     headerbar .path-buttons-box button > .horizontal > .dim-label,
     headerbar .path-buttons-box button > .horizontal > label.separator,
     headerbar .path-buttons-box button > .horizontal > .subtitle {
-      color: #31363D;
+      color: #C3C7D1;
       padding: 3px 12px;
       margin: 0;
-      border-right: 1px solid #cdcdcd; }
+      border-right: 1px solid #414348; }
     .titlebar .path-buttons-box button > .horizontal > image.dim-label, .titlebar .path-buttons-box button > .horizontal > image.subtitle,
     headerbar .path-buttons-box button > .horizontal > image.dim-label,
     headerbar .path-buttons-box button > .horizontal > image.subtitle {
@@ -2573,8 +2573,8 @@ GraniteWidgetsWelcome {
     .titlebar .path-buttons-box .current-dir label, .titlebar .path-buttons-box .current-dir image,
     headerbar .path-buttons-box .current-dir label,
     headerbar .path-buttons-box .current-dir image {
-      color: #000;
-      background-color: #dadada;
+      color: #ffffff;
+      background-color: #4d5360;
       text-shadow: none;
       border-radius: 6px;
       box-shadow: none;
@@ -5527,10 +5527,10 @@ window.background.budgie-settings-window.csd > box.horizontal > stack > scrolled
  * Calendar events *
 ********************/
 .color-light.timed label {
-  color: #31363d;
+  color: #C3C7D1;
   opacity: 1; }
 .week-view .color-light.timed label, .color-light label, .year-view .color-light:not(.timed) label {
-  color: #31363d;
+  color: #16181d;
   opacity: 1; }
 
 .xfce4-panel {

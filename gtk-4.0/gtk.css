@@ -3822,7 +3822,7 @@ placessidebar row {
         color: #ffffff; }
 
 .bottom-bar {
-  background-color: #181a20; }
+  background-color: transparent; }
   .bottom-bar button {
     background-color: transparent;
     border-radius: 0px;

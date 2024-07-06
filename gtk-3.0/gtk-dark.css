@@ -5605,6 +5605,12 @@ window.background.budgie-settings-window.csd > box.horizontal > stack > scrolled
 .-vala-panel-appmenu-private > menuitem:first-child > label {
   color: #31363d; }
 
+XfdesktopIconView.view .label {
+  color: #fff;
+  background-color: transparent; }
+  XfdesktopIconView.view .label:selected, XfdesktopIconView.view .label:active, XfdesktopIconView.view .label:checked {
+    background-color: rgba(218, 218, 218, 0.3); }
+
 /********
  * Gala *
  *******/

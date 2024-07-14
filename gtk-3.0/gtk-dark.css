@@ -5560,14 +5560,11 @@ window.background.budgie-settings-window.csd > box.horizontal > stack > scrolled
   border: none;
   background-color: rgba(22, 24, 29, 0);
   font-weight: normal; }
-  .xfce4-panel.panel button.flat:hover:not(.open_group) {
+  .xfce4-panel.panel button.flat:hover:not(.open_group), .xfce4-panel.panel button.flat:active:not(.open_group), .xfce4-panel.panel button.flat:checked:not(.open_group) {
     border: none;
-    background-color: #0b0c0f; }
-  .xfce4-panel.panel button.flat:active:not(.open_group), .xfce4-panel.panel button.flat:checked:not(.open_group) {
-    color: #C3C7D1;
-    box-shadow: inset 0 -2px #32363e;
-    background-color: #040506; }
-    .xfce4-panel.panel button.flat:active:not(.open_group) label, .xfce4-panel.panel button.flat:active:not(.open_group) image, .xfce4-panel.panel button.flat:checked:not(.open_group) label, .xfce4-panel.panel button.flat:checked:not(.open_group) image {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15); }
+    .xfce4-panel.panel button.flat:hover:not(.open_group) label, .xfce4-panel.panel button.flat:hover:not(.open_group) image, .xfce4-panel.panel button.flat:active:not(.open_group) label, .xfce4-panel.panel button.flat:active:not(.open_group) image, .xfce4-panel.panel button.flat:checked:not(.open_group) label, .xfce4-panel.panel button.flat:checked:not(.open_group) image {
       color: inherit; }
 
 #whiskermenu-window button {

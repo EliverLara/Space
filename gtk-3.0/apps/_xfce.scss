@@ -37,14 +37,10 @@
     background-color: transparentize($bg_color, 1);
     font-weight: normal;
 
-    &:hover {
+    &:hover, &:active, &:checked {
       border: none;
-      background-color: darken($bg_color, 5%);
-    }
-    &:active, &:checked {
-      color: $fg_color;
-      box-shadow: inset 0 -2px $selected_bg_color;
-      background-color: darken($bg_color, 8%);
+      color: $selected_fg_color;
+      background-color: transparentize(black, 0.86);
 
       label, image { color: inherit; }
     }

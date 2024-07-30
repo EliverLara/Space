@@ -1142,8 +1142,12 @@ $slider_size: 19px;
           @include button(normal);
           &:hover, &:focus { 
             @include button(hover); 
+            * { color: $selected_fg_color;}
           }
-          text-shadow: none;
+          * { 
+            color: $fg_color; 
+            text-shadow: none;
+          }
         }
 
           .message-secondary-bin > .event-time {
@@ -1750,6 +1754,7 @@ $slider_size: 19px;
       background-color: transparentize($bg_color, 0.03) !important; 
       box-shadow: 0 2px 14px 0px rgba(0, 0, 0, 0.301) !important;
       border-radius: 14px;
+      * { color: $fg_color; }
     }
 
     .notification-icon { padding: 5px; }

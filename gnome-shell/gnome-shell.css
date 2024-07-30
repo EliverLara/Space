@@ -976,12 +976,16 @@ StScrollBar {
 .message {
   color: #000;
   background-color: rgba(0, 0, 0, 0.14);
-  box-shadow: none !important;
-  text-shadow: none; }
+  box-shadow: none !important; }
   .message:hover, .message:focus {
     color: #f7f7f7 !important;
     background-color: rgba(0, 0, 0, 0.4) !important;
     box-shadow: none !important; }
+    .message:hover *, .message:focus * {
+      color: #f7f7f7; }
+  .message * {
+    color: #000;
+    text-shadow: none; }
 
 .message-secondary-bin > .event-time {
   color: black;
@@ -1535,6 +1539,8 @@ StScrollBar {
     background-color: rgba(243, 243, 243, 0.97) !important;
     box-shadow: 0 2px 14px 0px rgba(0, 0, 0, 0.301) !important;
     border-radius: 14px; }
+    .notification-banner:hover *, .notification-banner:focus * {
+      color: #000; }
   .notification-banner .notification-icon {
     padding: 5px; }
   .notification-banner .notification-content {

@@ -6128,9 +6128,9 @@ ConversationListView {
       background-color: #dadfe4;
       text-shadow: none;
       box-shadow: none; }
-.nemo-window .nemo-inactive-pane .view, .nemo-window .nemo-inactive-pane iconview,
+.nemo-window .nemo-inactive-pane .view:not(:selected), .nemo-window .nemo-inactive-pane iconview:not(:selected),
 .nemo-window .nemo-inactive-pane iconview {
-  background-color: #ededed; }
+  background-color: #e8e8e8; }
 
 .caja-notebook .frame {
   border-width: 0 0 1px; }

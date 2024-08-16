@@ -10,16 +10,12 @@
 /* path-bar of thunar */
 window.thunar toolbar#location-toolbar > toolitem > widget > widget.linked.path-bar > button.toggle.path-bar-button, .thunar toolbar .path-bar-button {
     &:hover { @include button(hover, $selected_bg_color, $selected_fg_color);  }
-    &:checked { @include button(active-header); }
+    &:checked { 
+        @include button(active, $selected_bg_color, $selected_fg_color); 
+        border-radius: 0px;
+    }
 }
 
-// window.thunar toolbar#location-toolbar > toolitem > widget > widget.linked.path-bar > button.path-bar-button, .thunar toolbar .path-bar-button {
-//     background: lighten($red, 5%);
-//     outline: none;
-//     border: none;
-//     box-shadow: none;
-// }
-  
 /* thunar sidepane */
 .thunar scrolledwindow.sidebar treeview.view {
     background: $sidebar_bg_color;

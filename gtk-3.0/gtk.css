@@ -6175,4 +6175,35 @@ ConversationListView {
       border: 1px solid #1b1d22;
       text-shadow: none; }
 
+/* thunar */
+.thunar toolbar {
+  background-color: #e0e4e8; }
+
+/* buttons in toolbar */
+.thunar toolbar.horizontal button image {
+  -gtk-icon-transform: scale(0.72); }
+
+/* path-bar of thunar */
+window.thunar toolbar#location-toolbar > toolitem > widget > widget.linked.path-bar > button.toggle.path-bar-button:hover, .thunar toolbar .path-bar-button:hover {
+  color: #000;
+  outline-color: rgba(0, 0, 0, 0.3);
+  background-color: #dadada;
+  text-shadow: none; }
+window.thunar toolbar#location-toolbar > toolitem > widget > widget.linked.path-bar > button.toggle.path-bar-button:checked, .thunar toolbar .path-bar-button:checked {
+  color: #31363D;
+  outline-color: rgba(49, 54, 61, 0.3);
+  background-color: #dadada;
+  border: 1px solid #c1c1c1;
+  text-shadow: none; }
+
+/* thunar sidepane */
+.thunar scrolledwindow.sidebar treeview.view {
+  background: #ebedef;
+  padding: 1.5px; }
+  .thunar scrolledwindow.sidebar treeview.view:hover, .thunar scrolledwindow.sidebar treeview.view:selected {
+    background: #dadada;
+    color: #000;
+    border-radius: 0;
+    box-shadow: none; }
+
 /*# sourceMappingURL=gtk.css.map */

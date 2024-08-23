@@ -40,7 +40,7 @@
     &:hover, &:active, &:checked {
       border: none;
       color: $selected_fg_color;
-      background-color: transparentize(white, 0.85);
+      background-color: if($variant == 'light', transparentize(black, 0.86),  transparentize(white, 0.85));
 
       label, image { color: inherit; }
     }
@@ -64,4 +64,15 @@
 .-vala-panel-appmenu-private > menuitem,
 .-vala-panel-appmenu-private > menuitem:first-child > label {
     color: $fg_color;
+}
+
+// Desktop icons
+
+XfdesktopIconView.view .label {
+  color: #fff;
+  background-color: transparent;
+
+  &:selected, &:active, &:checked {
+    background-color: transparentize($selected_bg_color, 0.7);
+  }
 }

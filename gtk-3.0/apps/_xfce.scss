@@ -40,7 +40,7 @@
     &:hover, &:active, &:checked {
       border: none;
       color: $selected_fg_color;
-      background-color: transparentize(black, 0.86);
+      background-color: if($variant == 'light', transparentize(black, 0.86),  transparentize(white, 0.85));
 
       label, image { color: inherit; }
     }

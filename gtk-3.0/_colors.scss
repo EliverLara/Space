@@ -2,9 +2,9 @@
 // it gets @if ed depending on $variant
 
 // Main definitions
-$base_color: if($variant == 'light', #f5f5f5, lighten(#161925, 1%));
+$base_color: if($variant == 'light', #f5f5f5, darken(#23262E, 3%));
 $text_color: if($variant == 'light', #31363D, #C3C7D1);
-$bg_color: if($variant == 'light', #e0e4e8, #161925);
+$bg_color: if($variant == 'light', #e0e4e8, darken(#1A1D23, 2%));
 $fg_color: if($variant == 'light', #31363d, #C3C7D1);
 $switch_bg: if($variant == 'light', #ffffff, transparentize(black,1));
 $shadow_color: rgba(162, 162, 165, 0.21);
@@ -22,8 +22,8 @@ $cyan: #00c1e4;
 $slider: #7b7bbd;
 $teal: #00e8c6;
 
-$selected_fg_color: #000;
-$selected_bg_color: darken(#dddddd, 1%);
+$selected_fg_color:  if($variant == 'light', #000, #ffffff);
+$selected_bg_color:  if($variant == 'light',darken(#dddddd, 1%), lighten(#292C33, 4%));
 /*$selected_bg_color: #00e8c6;06d6a0*/
 $selected_borders_color: darken($selected_bg_color, 10%);
 $borders_color: if($variant == 'light', darken(#cdcdcd, 0%), #414348);
@@ -37,7 +37,7 @@ $headerbar_color: $bg_color;
 $headerbar_fg_color: $text_color;
 $menu_color: if($variant == 'light', $base_color, mix($bg_color, $base_color, 20%));
 $popover_bg_color: $base_color;
-$popover_hover_color: darken($bg_color, 2%);
+$popover_hover_color: if($variant == 'light', darken($bg_color, 2%), lighten($base_color, 6%));
 
 $scrollbar_bg_color: mix($base_color, $bg_color, 50%);
 $scrollbar_slider_color: mix($fg_color, $bg_color, 60%);
@@ -52,7 +52,7 @@ $suggested_color: if($variant == 'light', $selected_bg_color, darken($selected_b
 
 $osd_fg_color: $fg_color;
 $osd_text_color: $fg_color;
-$osd_bg_color:  white;
+$osd_bg_color: if($variant == 'light',white, transparentize(#14171a, 0.2));
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
 $osd_borders_color: $borders_color;
@@ -110,4 +110,4 @@ $suggested_bg_color: linear-gradient(to right, #495aff 0%, #0014CC 100%);
 $destructive_bg_color: linear-gradient(to right, #ee0979, $red);
 $menu_shadow_color: if($variant == 'light', transparentize(rgb(110, 110, 110), 0.6), transparent);
 
-$btn_bg: #fff;
+$btn_bg: if($variant == 'light', #fff, #292C33);

@@ -8,28 +8,28 @@ stage {
 
 /* WIDGETS */
 /* Buttons */
-.button, .icon-button, .app-folder-dialog .edit-folder-button, .quick-settings-system-item .icon-button {
+.button, .icon-button, .app-folder-dialog .edit-folder-button, .quick-settings-system-item .icon-button, .screenshot-ui-type-button, .screenshot-ui-show-pointer-button {
   color: #fefefe;
   background-color: rgba(255, 255, 255, 0.12);
   box-shadow: none !important; }
-  .button:focus, .icon-button:focus, .app-folder-dialog .edit-folder-button:focus, .quick-settings-system-item .icon-button:focus {
+  .button:focus, .icon-button:focus, .app-folder-dialog .edit-folder-button:focus, .quick-settings-system-item .icon-button:focus, .screenshot-ui-type-button:focus, .screenshot-ui-show-pointer-button:focus {
     color: #fefefe;
     background-color: rgba(255, 255, 255, 0.3);
     box-shadow: none !important; }
-  .button:insensitive, .icon-button:insensitive, .app-folder-dialog .edit-folder-button:insensitive, .quick-settings-system-item .icon-button:insensitive {
+  .button:insensitive, .icon-button:insensitive, .app-folder-dialog .edit-folder-button:insensitive, .quick-settings-system-item .icon-button:insensitive, .screenshot-ui-type-button:insensitive, .screenshot-ui-show-pointer-button:insensitive {
     color: #8a8b8e;
     background-color: rgba(48, 50, 54, 0.644);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     border: none;
     text-shadow: none;
     icon-shadow: none; }
-  .button:active, .icon-button:active, .app-folder-dialog .edit-folder-button:active, .quick-settings-system-item .icon-button:active {
-    color: #3f51ff;
-    background-color: rgba(22, 24, 29, 0.93);
+  .button:active, .button:checked, .icon-button:active, .icon-button:checked, .app-folder-dialog .edit-folder-button:active, .quick-settings-system-item .icon-button:active, .screenshot-ui-type-button:active, .screenshot-ui-show-pointer-button:active, .app-folder-dialog .edit-folder-button:checked, .quick-settings-system-item .icon-button:checked, .screenshot-ui-type-button:checked, .screenshot-ui-show-pointer-button:checked {
+    color: #fefefe;
+    background-color: #3f51ff;
     text-shadow: none;
     icon-shadow: none;
     box-shadow: none !important; }
-  .button:hover, .icon-button:hover, .app-folder-dialog .edit-folder-button:hover, .quick-settings-system-item .icon-button:hover {
+  .button:hover, .icon-button:hover, .app-folder-dialog .edit-folder-button:hover, .quick-settings-system-item .icon-button:hover, .screenshot-ui-type-button:hover, .screenshot-ui-show-pointer-button:hover {
     color: #fefefe !important;
     background-color: rgba(255, 255, 255, 0.3) !important;
     box-shadow: none !important; }
@@ -51,8 +51,8 @@ stage {
     text-shadow: none;
     icon-shadow: none; }
   .modal-dialog-linked-button:active {
-    color: #3f51ff;
-    background-color: rgba(22, 24, 29, 0.93);
+    color: #fefefe;
+    background-color: #3f51ff;
     text-shadow: none;
     icon-shadow: none;
     box-shadow: none !important; }
@@ -677,7 +677,7 @@ StScrollBar {
 
 .osd-window,
 .resize-popup,
-.switcher-list, .workspace-switcher-container {
+.switcher-list, .workspace-switcher-container, .screenshot-ui-panel {
   color: #fefefe;
   background-color: rgba(22, 24, 29, 0.93);
   border: 1px solid #040506;
@@ -861,8 +861,8 @@ StScrollBar {
     background-color: rgba(255, 255, 255, 0.3) !important;
     box-shadow: none !important; }
   .pager-button:active {
-    color: #3f51ff;
-    background-color: rgba(22, 24, 29, 0.93);
+    color: #fefefe;
+    background-color: #3f51ff;
     text-shadow: none;
     icon-shadow: none;
     box-shadow: none !important; }
@@ -1330,8 +1330,8 @@ StScrollBar {
 .app-view-control {
   padding: 4px 32px; }
   .app-view-control:checked {
-    color: #3f51ff;
-    background-color: rgba(22, 24, 29, 0.93);
+    color: #fefefe;
+    background-color: #3f51ff;
     text-shadow: none;
     icon-shadow: none;
     box-shadow: none !important; }
@@ -1686,8 +1686,8 @@ StScrollBar {
     background-color: rgba(255, 255, 255, 0.3) !important;
     box-shadow: none !important; }
   .keyboard-key:active {
-    color: #3f51ff;
-    background-color: rgba(22, 24, 29, 0.93);
+    color: #fefefe;
+    background-color: #3f51ff;
     text-shadow: none;
     icon-shadow: none;
     box-shadow: none !important; }
@@ -1704,7 +1704,7 @@ StScrollBar {
       background-color: rgba(255, 255, 255, 0.3) !important;
       box-shadow: none !important; }
     .keyboard-key.default-key:active {
-      color: #3f51ff;
+      color: #fefefe;
       background-color: #1c1f25;
       text-shadow: none;
       icon-shadow: none;
@@ -1797,7 +1797,7 @@ StScrollBar {
         background-color: rgba(255, 255, 255, 0.3) !important;
         box-shadow: none !important; }
       .login-dialog .modal-dialog-button:default:active {
-        color: #3f51ff;
+        color: #fefefe;
         background-color: #3f51ff;
         text-shadow: none;
         icon-shadow: none;
@@ -2060,7 +2060,7 @@ StScrollBar {
   /* Move padding into the box; this is to allow menu arrows
      to extend to the border */ }
   .quick-toggle:checked {
-    color: #3f51ff;
+    color: #fefefe;
     background-color: rgba(255, 255, 255, 0.3);
     text-shadow: none;
     icon-shadow: none;
@@ -2101,7 +2101,7 @@ StScrollBar {
   padding: 6px 10.5px;
   border-width: 0; }
   .quick-menu-toggle .quick-toggle-arrow:checked {
-    color: #3f51ff;
+    color: #fefefe;
     background-color: rgba(255, 255, 255, 0.33);
     text-shadow: none;
     icon-shadow: none;
@@ -2142,6 +2142,41 @@ StScrollBar {
   color: #fefefe !important;
   background-color: rgba(255, 255, 255, 0.3) !important;
   box-shadow: none !important; }
+
+.screenshot-ui-panel {
+  border-radius: 16px; }
+
+.screenshot-ui-close-button {
+  background-color: #d0003a; }
+  .screenshot-ui-close-button:hover, .screenshot-ui-close-button:active {
+    background-color: #df003e; }
+
+.screenshot-ui-type-button, .screenshot-ui-show-pointer-button {
+  text-shadow: none; }
+  .screenshot-ui-type-button:checked, .screenshot-ui-show-pointer-button:checked {
+    color: #fefefe;
+    background-color: rgba(255, 255, 255, 0.3);
+    text-shadow: none;
+    icon-shadow: none;
+    box-shadow: none !important;
+    color: #fefefe; }
+
+.screenshot-ui-shot-cast-button:hover, .screenshot-ui-shot-cast-button:active, .screenshot-ui-shot-cast-button:checked {
+  color: #fefefe !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: none !important; }
+
+.screenshot-ui-window-selector {
+  background-color: #16181d; }
+
+.screenshot-ui-window-selector-window:hover .screenshot-ui-window-selector-window-border {
+  border-color: #0017f1; }
+.screenshot-ui-window-selector-window:checked .screenshot-ui-window-selector-window-border {
+  border-color: #3f51ff;
+  background-color: rgba(63, 81, 255, 0.2); }
+.screenshot-ui-window-selector-window:checked .screenshot-ui-window-selector-check {
+  color: #16181d;
+  background-color: #3f51ff; }
 
 .openweather-current-summarybox,
 .openweather-forecast-icon,

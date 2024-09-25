@@ -179,7 +179,7 @@
   //
   // active osd button
   //
-    $_bg: if($c!=$bg_color, $c, $selected_bg_color);
+    $_bg: if($c!=$osd_bg_color, $c, $selected_bg_color);
 
     color: $selected_fg_color;
     background-color: $_bg;

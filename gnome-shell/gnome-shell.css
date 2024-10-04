@@ -197,7 +197,8 @@ StScrollBar {
   color: #000;
   background-gradient-start: #f8f8f8;
   background-gradient-end: #dfdfdf;
-  background-gradient-direction: vertical; }
+  background-gradient-direction: vertical;
+  padding: 0 !important; }
   .modal-dialog .modal-dialog-content-box {
     margin: 32px 40px;
     spacing: 32px;

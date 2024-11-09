@@ -114,9 +114,9 @@ read if you used those and something break with a version upgrade you're on your
 
 toast {
   padding: 5px;
-  background-color: #f5f5f5;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.35);
-  color: #31363d; }
+  background-color: #2c303a;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+  color: #C3C7D1; }
   toast:backdrop {
     background-image: none;
     transition: 200ms ease-out; }
@@ -125,8 +125,8 @@ toast {
   toast button.circular.flat.image-button {
     padding: 2px; }
     toast button.circular.flat.image-button:hover {
-      color: #000;
-      outline-color: rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+      outline-color: rgba(255, 255, 255, 0.3);
       background-color: #ed254e;
       text-shadow: none; }
 

@@ -3866,6 +3866,8 @@ treeview ~ scrollbar.vertical {
     transition: 200ms ease-out; }
   .sidebar row, placessidebar row {
     padding: 8px 12px; }
+  .sidebar list, .sidebar list:backdrop, placessidebar list, placessidebar list:backdrop {
+    background-color: #ebedef; }
   .sidebar.source-list, placessidebar.source-list {
     background: #f5f5f5;
     padding: 4px 0px; }

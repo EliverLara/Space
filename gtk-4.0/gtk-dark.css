@@ -127,7 +127,7 @@ toast {
     toast button.circular.flat.image-button:hover {
       color: #ffffff;
       outline-color: rgba(255, 255, 255, 0.3);
-      background-color: #ed254e;
+      background-color: rgba(255, 255, 255, 0.3);
       text-shadow: none; }
 
 /***************
@@ -3769,43 +3769,45 @@ treeview ~ scrollbar.vertical {
 /***********
  * Sidebar *
  ***********/
-.sidebar, .navigation-sidebar {
+.sidebar, placessidebar {
   border-style: none;
   border-width: 0;
   background-color: #16181d; }
-  stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:dir(ltr), .sidebar.left, .sidebar.left:dir(rtl), .navigation-sidebar:dir(ltr), .navigation-sidebar.left, .navigation-sidebar.left:dir(rtl) {
+  stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:dir(ltr), .sidebar.left, .sidebar.left:dir(rtl), placessidebar:dir(ltr), placessidebar.left, placessidebar.left:dir(rtl) {
     border-right: none;
     border-left-style: none; }
   stacksidebar.sidebar:dir(rtl) list
   .sidebar:dir(rtl), stacksidebar.sidebar.right list
   .sidebar:dir(rtl), .sidebar.right, stacksidebar.sidebar:dir(rtl) list
-  .navigation-sidebar:dir(rtl), stacksidebar.sidebar.right list
-  .navigation-sidebar:dir(rtl), .navigation-sidebar.right {
+  placessidebar:dir(rtl), stacksidebar.sidebar.right list
+  placessidebar:dir(rtl), placessidebar.right {
     border-left: 1px solid #414348;
     border-right-style: none; }
-  .sidebar:backdrop, .navigation-sidebar:backdrop {
+  .sidebar:backdrop, placessidebar:backdrop {
     background-color: #1b1d23;
     border-color: #3d3f44;
     transition: 200ms ease-out; }
-  .sidebar.source-list, .navigation-sidebar.source-list {
+  .sidebar row, placessidebar row {
+    padding: 8px 12px; }
+  .sidebar.source-list, placessidebar.source-list {
     background: #1c1f25;
     padding: 4px 0px; }
-    .sidebar.source-list.view, iconview.sidebar.source-list, .navigation-sidebar.source-list.view, iconview.navigation-sidebar.source-list {
+    .sidebar.source-list.view, iconview.sidebar.source-list, placessidebar.source-list.view {
       transition: all .12s ease-in; }
-      .sidebar.source-list.view:selected, iconview.sidebar.source-list:selected, .navigation-sidebar.source-list.view:selected, iconview.navigation-sidebar.source-list:selected {
+      .sidebar.source-list.view:selected, iconview.sidebar.source-list:selected, placessidebar.source-list.view:selected {
         padding-left: 4px;
         background: rgba(238, 238, 238, 0.5);
         color: #ACACAC;
         border-left: 4px solid #32363e; }
-        .sidebar.source-list.view:selected:active, iconview.sidebar.source-list:selected:active, .navigation-sidebar.source-list.view:selected:active, iconview.navigation-sidebar.source-list:selected:active {
+        .sidebar.source-list.view:selected:active, iconview.sidebar.source-list:selected:active, placessidebar.source-list.view:selected:active {
           box-shadow: inset 0 2px 3px -1px rgba(0, 0, 0, 0.5); }
-        .sidebar.source-list.view:selected.has-open-popup, iconview.sidebar.source-list:selected.has-open-popup, .sidebar.source-list.view:selected:hover, iconview.sidebar.source-list:selected:hover, .navigation-sidebar.source-list.view:selected.has-open-popup, iconview.navigation-sidebar.source-list:selected.has-open-popup, .navigation-sidebar.source-list.view:selected:hover, iconview.navigation-sidebar.source-list:selected:hover {
+        .sidebar.source-list.view:selected.has-open-popup, iconview.sidebar.source-list:selected.has-open-popup, .sidebar.source-list.view:selected:hover, iconview.sidebar.source-list:selected:hover, placessidebar.source-list.view:selected.has-open-popup, placessidebar.source-list.view:selected:hover {
           background-color: rgba(50, 54, 62, 0.9); }
-        .sidebar.source-list.view:selected:backdrop, iconview.sidebar.source-list:selected:backdrop, .navigation-sidebar.source-list.view:selected:backdrop, iconview.navigation-sidebar.source-list:selected:backdrop {
+        .sidebar.source-list.view:selected:backdrop, iconview.sidebar.source-list:selected:backdrop, placessidebar.source-list.view:selected:backdrop {
           background-color: rgba(50, 54, 62, 0.6); }
-      .sidebar.source-list.view:hover, iconview.sidebar.source-list:hover, .sidebar.source-list.view iconview.source-list:hover, iconview.sidebar.source-list iconview.source-list:hover, .navigation-sidebar.source-list.view:hover, iconview.navigation-sidebar.source-list:hover, .navigation-sidebar.source-list.view iconview.source-list:hover, iconview.navigation-sidebar.source-list iconview.source-list:hover {
+      .sidebar.source-list.view:hover, iconview.sidebar.source-list:hover, .sidebar.source-list.view iconview.source-list:hover, iconview.sidebar.source-list iconview.source-list:hover, placessidebar.source-list.view:hover, placessidebar.source-list.view iconview.source-list:hover {
         background-color: rgba(22, 24, 29, 0.4); }
-  paned .sidebar.left, paned .sidebar.right, paned .sidebar.left:dir(rtl), paned .sidebar:dir(rtl), paned .sidebar:dir(ltr), paned .sidebar, paned .navigation-sidebar.left, paned .navigation-sidebar.right, paned .navigation-sidebar.left:dir(rtl), paned .navigation-sidebar:dir(rtl), paned .navigation-sidebar:dir(ltr), paned .navigation-sidebar {
+  paned .sidebar.left, paned .sidebar.right, paned .sidebar.left:dir(rtl), paned .sidebar:dir(rtl), paned .sidebar:dir(ltr), paned .sidebar, paned placessidebar.left, paned placessidebar.right, paned placessidebar.left:dir(rtl), paned placessidebar:dir(rtl), paned placessidebar:dir(ltr), paned placessidebar {
     border-style: none;
     border-color: #414348; }
 
@@ -5909,13 +5911,17 @@ ConversationListView .view .cell, ConversationListView iconview .cell {
 .sidebar,
 .sidebar:backdrop,
 .navigation-sidebar,
-.navigation-sidebar:backdrop {
+.navigation-sidebar:backdrop,
+placessidebar,
+placessidebar:backdrop {
   background: transparent; }
 .sidebar-pane .top-bar, .sidebar-pane .top-bar headerbar,
 .sidebar .top-bar,
 .sidebar .top-bar headerbar,
 .navigation-sidebar .top-bar,
-.navigation-sidebar .top-bar headerbar {
+.navigation-sidebar .top-bar headerbar,
+placessidebar .top-bar,
+placessidebar .top-bar headerbar {
   background: transparent; }
 
 .content-pane {

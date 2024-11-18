@@ -32,6 +32,7 @@
   }
 
   row { padding: 8px 12px; }
+  list { &, &:backdrop { background-color: $sidebar_bg_color; } }
 
     //elementary os file manager
     &.source-list{

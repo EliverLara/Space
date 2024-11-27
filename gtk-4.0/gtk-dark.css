@@ -2370,6 +2370,8 @@ window.csd > .titlebar:not(headerbar) {
 
 .content-pane .top-bar {
   background-color: #1c1f25; }
+  .content-pane .top-bar:backdrop {
+    background-color: #1f2128; }
 
 /**************
  * GtkInfoBar *

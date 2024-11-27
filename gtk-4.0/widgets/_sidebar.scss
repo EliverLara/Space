@@ -1,14 +1,10 @@
 /***********
  * Sidebar *
  ***********/
-.sidebar, placessidebar {
+.sidebar {
   border-style: none;
   border-width: 0;
   background-color: $sidebar_bg_color;
-
-  // .frame{
-  //   border: none;
-  // }
 
   @at-root %sidebar_left,
   &:dir(ltr),
@@ -32,7 +28,6 @@
   }
 
   row { padding: 8px 12px; }
-  list { &, &:backdrop { background-color: $sidebar_bg_color; } }
 
     //elementary os file manager
     &.source-list{
@@ -90,6 +85,10 @@ stacksidebar {
       background-size: 6px 6px, 0 0;
     }
   }
+}
+
+placessidebar, .navigation-sidebar {
+  &, &:backdrop { background-color: $sidebar_bg_color; }
 }
 
 placessidebar {

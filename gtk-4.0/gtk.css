@@ -3839,47 +3839,43 @@ treeview ~ scrollbar.vertical {
 /***********
  * Sidebar *
  ***********/
-.sidebar, placessidebar {
+.sidebar {
   border-style: none;
   border-width: 0;
   background-color: #16181d; }
-  stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:dir(ltr), .sidebar.left, .sidebar.left:dir(rtl), placessidebar:dir(ltr), placessidebar.left, placessidebar.left:dir(rtl) {
+  stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:dir(ltr), .sidebar.left, .sidebar.left:dir(rtl) {
     border-right: none;
     border-left-style: none; }
   stacksidebar.sidebar:dir(rtl) list
   .sidebar:dir(rtl), stacksidebar.sidebar.right list
-  .sidebar:dir(rtl), .sidebar.right, stacksidebar.sidebar:dir(rtl) list
-  placessidebar:dir(rtl), stacksidebar.sidebar.right list
-  placessidebar:dir(rtl), placessidebar.right {
+  .sidebar:dir(rtl), .sidebar.right {
     border-left: 1px solid #414348;
     border-right-style: none; }
-  .sidebar:backdrop, placessidebar:backdrop {
+  .sidebar:backdrop {
     background-color: #1b1d23;
     border-color: #3d3f44;
     transition: 200ms ease-out; }
-  .sidebar row, placessidebar row {
+  .sidebar row {
     padding: 8px 12px; }
-  .sidebar list, .sidebar list:backdrop, placessidebar list, placessidebar list:backdrop {
-    background-color: #16181d; }
-  .sidebar.source-list, placessidebar.source-list {
+  .sidebar.source-list {
     background: #1c1f25;
     padding: 4px 0px; }
-    .sidebar.source-list.view, iconview.sidebar.source-list, placessidebar.source-list.view {
+    .sidebar.source-list.view, iconview.sidebar.source-list {
       transition: all .12s ease-in; }
-      .sidebar.source-list.view:selected, iconview.sidebar.source-list:selected, placessidebar.source-list.view:selected {
+      .sidebar.source-list.view:selected, iconview.sidebar.source-list:selected {
         padding-left: 4px;
         background: rgba(238, 238, 238, 0.5);
         color: #ACACAC;
         border-left: 4px solid #32363e; }
-        .sidebar.source-list.view:selected:active, iconview.sidebar.source-list:selected:active, placessidebar.source-list.view:selected:active {
+        .sidebar.source-list.view:selected:active, iconview.sidebar.source-list:selected:active {
           box-shadow: inset 0 2px 3px -1px rgba(0, 0, 0, 0.5); }
-        .sidebar.source-list.view:selected.has-open-popup, iconview.sidebar.source-list:selected.has-open-popup, .sidebar.source-list.view:selected:hover, iconview.sidebar.source-list:selected:hover, placessidebar.source-list.view:selected.has-open-popup, placessidebar.source-list.view:selected:hover {
+        .sidebar.source-list.view:selected.has-open-popup, iconview.sidebar.source-list:selected.has-open-popup, .sidebar.source-list.view:selected:hover, iconview.sidebar.source-list:selected:hover {
           background-color: rgba(50, 54, 62, 0.9); }
-        .sidebar.source-list.view:selected:backdrop, iconview.sidebar.source-list:selected:backdrop, placessidebar.source-list.view:selected:backdrop {
+        .sidebar.source-list.view:selected:backdrop, iconview.sidebar.source-list:selected:backdrop {
           background-color: rgba(50, 54, 62, 0.6); }
-      .sidebar.source-list.view:hover, iconview.sidebar.source-list:hover, .sidebar.source-list.view iconview.source-list:hover, iconview.sidebar.source-list iconview.source-list:hover, placessidebar.source-list.view:hover, placessidebar.source-list.view iconview.source-list:hover {
+      .sidebar.source-list.view:hover, iconview.sidebar.source-list:hover, .sidebar.source-list.view iconview.source-list:hover, iconview.sidebar.source-list iconview.source-list:hover {
         background-color: rgba(22, 24, 29, 0.4); }
-  paned .sidebar.left, paned .sidebar.right, paned .sidebar.left:dir(rtl), paned .sidebar:dir(rtl), paned .sidebar:dir(ltr), paned .sidebar, paned placessidebar.left, paned placessidebar.right, paned placessidebar.left:dir(rtl), paned placessidebar:dir(rtl), paned placessidebar:dir(ltr), paned placessidebar {
+  paned .sidebar.left, paned .sidebar.right, paned .sidebar.left:dir(rtl), paned .sidebar:dir(rtl), paned .sidebar:dir(ltr), paned .sidebar {
     border-style: none;
     border-color: #414348; }
 
@@ -3888,6 +3884,9 @@ stacksidebar row > label {
   padding-right: 6px; }
 stacksidebar row.needs-attention > label {
   background-size: 6px 6px, 0 0; }
+
+placessidebar, placessidebar:backdrop, .navigation-sidebar, .navigation-sidebar:backdrop {
+  background-color: #16181d; }
 
 placessidebar > viewport.frame {
   border-style: solid; }

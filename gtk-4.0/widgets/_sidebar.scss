@@ -1,7 +1,7 @@
 /***********
  * Sidebar *
  ***********/
-.sidebar, placessidebar {
+.sidebar {
   border-style: none;
   border-width: 0;
   background-color: $sidebar_bg_color;
@@ -28,7 +28,7 @@
   }
 
   row { padding: 8px 12px; }
-  list { &, &:backdrop { background-color: $sidebar_bg_color; }}
+  
     //elementary os file manager
     &.source-list{
       background: $base_color;
@@ -87,11 +87,14 @@ stacksidebar {
   }
 }
 
+placessidebar, .navigation-sidebar {
+  &, &:backdrop { background-color: $sidebar_bg_color; } 
+}
+
 placessidebar {
   > viewport.frame { border-style: solid; }
 
   row {
-
     padding: 2px 11px;
    // margin: 0 15px;
     .sidebar-icon {

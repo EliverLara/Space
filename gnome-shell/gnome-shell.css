@@ -1568,8 +1568,8 @@ StScrollBar {
       border: none; }
 
 .notification-buttons-bin .notification-button {
-  color: #000;
-  background-color: rgba(0, 0, 0, 0.14);
+  color: #fefefe;
+  background-color: rgba(255, 255, 255, 0.12);
   box-shadow: none !important;
   border-radius: 10px !important; }
 

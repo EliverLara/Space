@@ -1567,6 +1567,12 @@ StScrollBar {
       box-shadow: none !important;
       border: none; }
 
+.notification-buttons-bin .notification-button {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.14);
+  box-shadow: none !important;
+  border-radius: 10px !important; }
+
 .summary-source-counter {
   font-size: 10pt;
   font-weight: bold;

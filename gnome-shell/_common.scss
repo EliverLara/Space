@@ -1776,6 +1776,11 @@ $slider_size: 19px;
       }
     }
   }
+
+  .notification-buttons-bin .notification-button {
+    @include button(normal);
+    border-radius: 10px !important;
+  }
   .summary-source-counter {
     font-size: 10pt;
     font-weight: bold;

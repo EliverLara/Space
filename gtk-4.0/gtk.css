@@ -3120,7 +3120,8 @@ popover.background {
     background: linear-gradient(to bottom, #f5f5f5 20%, #e0e4e8);
     background-clip: padding-box;
     border: 1px solid #cdcdcd;
-    box-shadow: 0 4px 6px rgba(110, 110, 110, 0.4); }
+    box-shadow: 0 4px 6px rgba(110, 110, 110, 0.4);
+    color: #31363d; }
     popover.background > arrow label.dim-label, popover.background > arrow label.separator, popover.background > arrow .titlebar label.subtitle, .titlebar popover.background > arrow label.subtitle,
     popover.background > arrow headerbar label.subtitle,
     headerbar popover.background > arrow label.subtitle, popover.background > arrow label.title-2, popover.background > arrow .text-button:not(.suggested-action),

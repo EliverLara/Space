@@ -2440,7 +2440,8 @@ infobar {
 
 banner revealer widget {
   background: linear-gradient(to right, #495aff 0%, #0014CC 100%);
-  padding: 5px; }
+  padding: 5px;
+  color: #f5f5f5; }
 
 levelbar.horizontal trough > block {
   min-height: 5px;

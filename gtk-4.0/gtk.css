@@ -2561,6 +2561,12 @@ row.activatable:selected.has-open-popup, row.activatable:selected:hover {
   background-color: rgba(218, 218, 218, 0.5); }
 row.activatable:selected:backdrop {
   background-color: rgba(218, 218, 218, 0.6); }
+row.activatable.button {
+  font-weight: normal;
+  color: #31363D;
+  background-color: #fff;
+  text-shadow: none;
+  border: 1px solid #cdcdcd; }
 row .view, row iconview {
   background-color: transparent; }
 

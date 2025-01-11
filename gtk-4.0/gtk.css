@@ -2439,7 +2439,8 @@ infobar {
 
 banner revealer widget {
   background: linear-gradient(to right, #495aff 0%, #0014CC 100%);
-  padding: 5px; }
+  padding: 5px;
+  color: #C3C7D1; }
   banner revealer widget button {
     background-color: transparent;
     background-image: none;
@@ -2568,6 +2569,12 @@ row.activatable:selected.has-open-popup, row.activatable:selected:hover {
   background-color: rgba(50, 54, 62, 0.5); }
 row.activatable:selected:backdrop {
   background-color: rgba(50, 54, 62, 0.6); }
+row.activatable.button {
+  font-weight: normal;
+  color: #C3C7D1;
+  background-color: #292C33;
+  text-shadow: none;
+  border: 1px solid #414348; }
 row .view, row iconview {
   background-color: transparent; }
 

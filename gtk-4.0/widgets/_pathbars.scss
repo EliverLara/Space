@@ -28,8 +28,8 @@
   }
 }
 
-// Nautilus, filechooser(gnome 47) pathbar
-#NautilusPathBar {
+// Gnome nautilus, filechooser(gnome 47) path-bar
+#NautilusPathBar, .pathbar {
   margin-top: 2px;
   @include button(normal);
 

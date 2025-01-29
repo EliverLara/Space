@@ -31,88 +31,6 @@ headerbar {
  
   entry { min-height: 24px;}  
   
-  // button {
-  //   //@include button(normal-header);
-  //   // min-height: 22px;
-  //   // margin-top: 8px;
-  //   // margin-bottom: 8px;
-  //   // box-shadow: none;
-  //   // &.image-button{
-  //   //    padding: 3px 4px;
-  //   // }
-
-      
-  //     background-color: red;
-  //   &:hover,
-  //   &:active,
-  //   &:checked {
-  //     @include button(hover-header);
-  //   }
-
-  //   &:backdrop,
-  //   &:disabled,
-  //   &:backdrop:disabled {
-  //     @include button(backdrop-header,red,transparentize($fg_color,0.8));
-  //   }
-
-  //   &:backdrop {
-  //     &:hover,
-  //     &:active,
-  //     &:checked {
-  //       @include button(hover-header,transparent,transparentize(white,0.7));
-  //     }
-  //   }
-
- 
-
-  //   @each $b_type, $b_color in (suggested-action, $cyan),
-  //                              (destructive-action, $destructive_color) {
-  //     &.#{$b_type} {
-  //       font-weight: bold;
-  //       min-height: 22px;
-  //       margin-top: 8px;
-  //       margin-bottom: 8px;
-  //       border-radius: 4px;
-  //       @include button(normal, $b_color, white);
-  //       box-shadow: none;
-
-  //       &:hover { @include button(hover, $b_color, white); }
-
-  //       &:active { @include button(active, $b_color, white); }
-
-  //       &:disabled {
-  //         @include button(insensitive, $b_color, white);
-  //         label {color: transparentize(white,0.5);}
-  //       }
-
-  //       &:backdrop {
-  //         @include button(backdrop, $b_color, white);
-  //         border-radius: 3px;
-  //       }
-
-  //       &:backdrop:disabled { @include button(backdrop-insensitive, $b_color, white); }
-
-  //     }
-  //   }
-
-  //   //Reset style
-  //   &.titlebutton {
-  //     color: transparent;
-  //     box-shadow: none;
-  //     border: none;
-  //     background-color: transparent;
-  //     background-repeat: no-repeat;
-  //     &:hover,
-  //     &:active,
-  //     &:checked,
-  //     &:backdrop,
-  //     &:backdrop:hover,* {
-  //       color: transparent;
-  //       box-shadow: none;
-  //       background-color: transparent;
-  //     }
-  //   }
-  // }
   %linked-header {
     border-radius: 0;
     border-right-style: none;
@@ -296,3 +214,5 @@ headerbar {
   background-color: $base_color;
   &:backdrop { background-color: $backdrop_base_color; }
 }
+
+.top-bar { background-color: transparent; }

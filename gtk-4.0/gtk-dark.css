@@ -3950,12 +3950,12 @@ placessidebar row {
         color: #ffffff; }
 
 .bottom-bar {
-  background-color: #181a20; }
-  .bottom-bar button {
+  background-color: transparent; }
+  .bottom-bar button.toggle:not(.image-button) {
     background-color: transparent;
     border-radius: 0px;
     border: none; }
-    .bottom-bar button .view, .bottom-bar button iconview {
+    .bottom-bar button.toggle:not(.image-button) .view, .bottom-bar button.toggle:not(.image-button) iconview {
       background-color: transparent; }
 
 spinbutton {

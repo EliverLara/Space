@@ -130,7 +130,7 @@ placessidebar {
 // Gnome 46: File operations status bar at the bottom of sidebar
 .bottom-bar  {
   background-color: transparent;
-  button {
+  button.toggle:not(.image-button) {
     background-color: transparent;
     border-radius: 0px;
     border: none;

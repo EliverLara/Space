@@ -3948,11 +3948,11 @@ placessidebar row {
 
 .bottom-bar {
   background-color: transparent; }
-  .bottom-bar button {
+  .bottom-bar button.toggle:not(.image-button) {
     background-color: transparent;
     border-radius: 0px;
     border: none; }
-    .bottom-bar button .view, .bottom-bar button iconview {
+    .bottom-bar button.toggle:not(.image-button) .view, .bottom-bar button.toggle:not(.image-button) iconview {
       background-color: transparent; }
 
 spinbutton {

@@ -5586,6 +5586,31 @@ XfdesktopIconView.view .label {
   XfdesktopIconView.view .label:selected, XfdesktopIconView.view .label:active, XfdesktopIconView.view .label:checked {
     background-color: rgba(218, 218, 218, 0.3); }
 
+#XfceNotifyWindow {
+  background-color: #dadfe4;
+  border-radius: 12px;
+  border-width: 1px;
+  border: 1px solid #cdcdcd;
+  color: #31363d;
+  padding: 40px; }
+  #XfceNotifyWindow:hover, #XfceNotifyWindow:focus {
+    background-color: #e0e4e8; }
+  #XfceNotifyWindow label, #XfceNotifyWindow image {
+    color: #31363d; }
+  #XfceNotifyWindow button {
+    font-weight: normal;
+    color: #31363D;
+    border: 1px solid #cdcdcd;
+    background-color: #fff;
+    text-shadow: none; }
+    #XfceNotifyWindow button:hover {
+      color: #31363D;
+      outline-color: rgba(49, 54, 61, 0.3);
+      background-color: #dadada;
+      text-shadow: none; }
+      #XfceNotifyWindow button:hover label {
+        color: #000; }
+
 /********
  * Gala *
  *******/

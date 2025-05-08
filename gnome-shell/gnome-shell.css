@@ -985,11 +985,13 @@ StScrollBar {
 .message {
   color: #000;
   background-color: rgba(0, 0, 0, 0.14);
-  box-shadow: none !important; }
+  box-shadow: none !important;
+  background-color: #CACCCD; }
   .message:hover, .message:focus {
     color: #f7f7f7 !important;
     background-color: rgba(0, 0, 0, 0.4) !important;
-    box-shadow: none !important; }
+    box-shadow: none !important;
+    background-color: #8A8D8E !important; }
     .message:hover *, .message:focus * {
       color: #f7f7f7; }
   .message * {

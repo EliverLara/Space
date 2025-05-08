@@ -1156,8 +1156,10 @@ $slider_size: 19px;
 
         .message {
           @include button(normal);
+          background-color: #CACCCD;
           &:hover, &:focus { 
             @include button(hover); 
+            background-color: #8A8D8E !important;
             * { color: $selected_fg_color;}
           }
           * { 

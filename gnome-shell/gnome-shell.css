@@ -994,11 +994,13 @@ StScrollBar {
   color: #fefefe;
   background-color: rgba(255, 255, 255, 0.12);
   box-shadow: none !important;
+  background-color: #323238;
   border-radius: 10px; }
   .message:hover, .message:focus {
     color: #fefefe !important;
     background-color: rgba(255, 255, 255, 0.3) !important;
-    box-shadow: none !important; }
+    box-shadow: none !important;
+    background-color: #565660 !important; }
 
 .message-secondary-bin > .event-time {
   color: #d8d8d8;

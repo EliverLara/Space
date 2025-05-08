@@ -1153,8 +1153,12 @@ $slider_size: 19px;
         }
 
         .message {
-          &:hover,&:focus { @include button(hover); }
+          &:hover,&:focus { 
+            @include button(hover); 
+            background-color: lighten(#323238, 15%) !important;
+          }
           @include button(normal);
+          background-color: #323238;
           border-radius: 10px;
         }
 

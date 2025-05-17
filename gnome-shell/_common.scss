@@ -2291,6 +2291,7 @@ $base_padding: 6px;
   &:checked { 
     @include button(active, $barlevel_active_bg);
     color: $selected_fg_color;
+    &:hover {background-color: lighten($barlevel_active_bg, 5%) !important; }
   }
 
   &, &:hover, &:checked { text-shadow: none; }
@@ -2331,6 +2332,7 @@ $base_padding: 6px;
       @include button(active, darken($barlevel_active_bg, 3%));
       color: $selected_fg_color;
       border-width: 0;
+      &:hover {background-color: lighten($barlevel_active_bg, 5%) !important; }
     }
   
     &:ltr { border-radius: 0 16px 16px 0; }

@@ -2286,6 +2286,7 @@ $base_padding: 6px;
   &:checked { 
     @include button(active, transparentize(white, 0.7));
     color: $selected_fg_color;
+    &:hover { background-color: transparentize(white, 0.47) !important; }
   }
 
   &, &:hover, &:checked { border: none; }
@@ -2327,6 +2328,7 @@ $base_padding: 6px;
       @include button(active, transparentize(white, 0.67));
       color: $selected_fg_color;
       border-width: 0;
+      &:hover { background-color: transparentize(white, 0.47) !important; }
     }
   
     &:ltr { border-radius: 0 16px 16px 0; }

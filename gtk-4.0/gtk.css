@@ -3135,11 +3135,15 @@ paned.vertical > separator {
     padding: 0; }
   #NautilusPathBar .flat.popup, .pathbar .flat.popup {
     margin: 0; }
-    #NautilusPathBar .flat.popup:hover, #NautilusPathBar .flat.popup:active, #NautilusPathBar .flat.popup:checked, #NautilusPathBar .flat.popup:active:hover, #NautilusPathBar .flat.popup:focus, .pathbar .flat.popup:hover, .pathbar .flat.popup:active, .pathbar .flat.popup:checked, .pathbar .flat.popup:active:hover, .pathbar .flat.popup:focus {
-      color: #ffffff;
-      outline-color: rgba(255, 255, 255, 0.3);
-      background-color: #32363e;
-      text-shadow: none; }
+    #NautilusPathBar .flat.popup button, .pathbar .flat.popup button {
+      padding: 4px 6px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px; }
+      #NautilusPathBar .flat.popup button:hover, #NautilusPathBar .flat.popup button:active, #NautilusPathBar .flat.popup button:checked, .pathbar .flat.popup button:hover, .pathbar .flat.popup button:active, .pathbar .flat.popup button:checked {
+        color: #ffffff;
+        outline-color: rgba(255, 255, 255, 0.3);
+        background: #4d5360;
+        text-shadow: none; }
   #NautilusPathBar .current-dir label, .pathbar .current-dir label {
     padding: 5.5px 12px; }
   #NautilusPathBar .current-dir label, #NautilusPathBar .current-dir image, .pathbar .current-dir label, .pathbar .current-dir image {

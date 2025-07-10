@@ -2461,6 +2461,18 @@ banner revealer widget {
   background: linear-gradient(to right, #495aff 0%, #0014CC 100%);
   padding: 5px;
   color: #f5f5f5; }
+  banner revealer widget button.suggested-action {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    border: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+    background-color: rgba(255, 255, 255, 0.2); }
+    banner revealer widget button.suggested-action:hover, banner revealer widget button.suggested-action:active {
+      background-color: rgba(255, 255, 255, 0.4); }
+    banner revealer widget button.suggested-action:backdrop {
+      background-color: rgba(255, 255, 255, 0.3); }
 
 levelbar.horizontal trough > block {
   min-height: 5px;

@@ -6021,7 +6021,7 @@ ConversationListView .view .cell, ConversationListView iconview .cell {
     filter: brightness(86%); }
   .colorpad:checked {
     filter: brightness(100%);
-    box-shadow: 0px 0px 0px 1.5px #32363e, inset 0px -3px 0px 0px @colorpad_fg_color; }
+    box-shadow: 0px 0px 0px 1.5px #dadada, inset 0px -3px 0px 0px @colorpad_fg_color; }
 
 .colorsetter {
   color: colorsetter_fg_color; }
@@ -6035,7 +6035,7 @@ ConversationListView .view .cell, ConversationListView iconview .cell {
     filter: brightness(100%); }
 
 .overlay_toolbar, .overlay_toolbar_scrollable {
-  background: #272b34;
+  background: white;
   padding: 10px; }
 
 /*# sourceMappingURL=gtk.css.map */

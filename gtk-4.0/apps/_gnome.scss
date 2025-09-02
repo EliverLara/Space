@@ -165,7 +165,7 @@
  * Calendar sidebar *
 ********************/
 datechooser {
-  &, &:backdrop { background-color: $sidebar_bg_color; }
+  &, &:backdrop { background-color: transparent; }
   .circular.day.text-button{ 
     padding: 6px;
     border-radius: 50%;
@@ -184,7 +184,7 @@ datechooser {
 }
 
 agenda-view list.background {
-  &, &:backdrop { background-color: $sidebar_bg_color; }
+  &, &:backdrop { background-color: transparent; }
   padding: 8px;
   .caption-heading, .dim-label.no-events {
     color: $headerbar_fg_color;

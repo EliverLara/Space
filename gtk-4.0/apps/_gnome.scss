@@ -161,6 +161,36 @@
   }
 }
 
+/*******************
+ * Calendar sidebar *
+********************/
+datechooser {
+  &, &:backdrop { background-color: $sidebar_bg_color; }
+  .circular.day.text-button{ 
+    padding: 6px;
+    border-radius: 50%;
+    min-height: 22px;
+    min-width: 22px;
+    border: none;
+    &.flat.other-month, &.flat.non-workday {
+      color: $insensitive_fg_color;
+    }
+    &.today { color: $blue; }
+    &:active, &:selected { 
+      @include button(active, $blue, $base_color);
+      font-weight: bold;
+    }
+  }
+}
+
+agenda-view list.background {
+  &, &:backdrop { background-color: $sidebar_bg_color; }
+  padding: 8px;
+  .caption-heading, .dim-label.no-events {
+    color: $headerbar_fg_color;
+  }
+}
+
 /******************************
  * Gnome system monitor graph *
 ******************************/

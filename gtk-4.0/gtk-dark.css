@@ -3033,6 +3033,17 @@ tabbar tabbox {
     tabbar tabbox > tabboxchild > tab:selected {
       background: #1c1f25;
       color: #C3C7D1; }
+    tabbar tabbox > tab button.flat,
+    tabbar tabbox > tabboxchild > tab button.flat {
+      padding: 0;
+      margin: 4px;
+      min-width: 20px;
+      min-height: 20px;
+      border-radius: 10px; }
+      tabbar tabbox > tab button.flat:hover,
+      tabbar tabbox > tabboxchild > tab button.flat:hover {
+        background-color: #3d4351;
+        color: #C3C7D1; }
 
 /*********
  * Paned *

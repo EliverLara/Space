@@ -4012,7 +4012,7 @@ placessidebar row {
         color: #ffffff; }
 
 .sidebar-pane .bottom-bar {
-  background-color: #16181d; }
+  background-color: transparent; }
   .sidebar-pane .bottom-bar button {
     background-color: transparent;
     background-image: none;

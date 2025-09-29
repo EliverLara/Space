@@ -4014,13 +4014,16 @@ placessidebar row {
       placessidebar row:drop(active):not(:disabled):selected, placessidebar row:drop(active):not(:disabled):selected label, placessidebar row:drop(active):not(:disabled):selected image {
         color: #ffffff; }
 
-.bottom-bar {
-  background-color: transparent; }
-  .bottom-bar button.toggle:not(.image-button) {
+.sidebar-pane .bottom-bar {
+  background-color: #16181d; }
+  .sidebar-pane .bottom-bar button {
     background-color: transparent;
-    border-radius: 0px;
-    border: none; }
-    .bottom-bar button.toggle:not(.image-button) .view, .bottom-bar button.toggle:not(.image-button) iconview {
+    background-image: none;
+    box-shadow: none;
+    border: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none; }
+    .sidebar-pane .bottom-bar button .view, .sidebar-pane .bottom-bar button iconview {
       background-color: transparent; }
 
 spinbutton {

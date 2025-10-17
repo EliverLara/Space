@@ -1,11 +1,11 @@
 .nemo-window {
     .places-treeview {
         -NemoPlacesTreeView-disk-full-bg-color: lighten($sidebar_bg_color, 15%);
-        -NemoPlacesTreeView-disk-full-fg-color: $yellow;
+        -NemoPlacesTreeView-disk-full-fg-color: $blue;
         -GtkTreeView-vertical-separator: 10; 
         .view.cell,
         iconview.cell {
-            &:hover { background: transparentize(darken($sidebar_bg_color, 3%), 0.3); }
+            &:hover,
             &:selected {
                 background: $selected_bg_color;
                 color: $selected_fg_color;

@@ -6066,12 +6066,10 @@ ConversationListView {
 
 .nemo-window .places-treeview {
   -NemoPlacesTreeView-disk-full-bg-color: #373c49;
-  -NemoPlacesTreeView-disk-full-fg-color: #f9dc5c;
+  -NemoPlacesTreeView-disk-full-fg-color: #495aff;
   -GtkTreeView-vertical-separator: 10; }
-  .nemo-window .places-treeview .view.cell:hover, .nemo-window .places-treeview iconview.cell:hover,
-  .nemo-window .places-treeview iconview.cell:hover {
-    background: rgba(15, 17, 20, 0.7); }
-  .nemo-window .places-treeview .view.cell:selected, .nemo-window .places-treeview iconview.cell:selected,
+  .nemo-window .places-treeview .view.cell:hover, .nemo-window .places-treeview iconview.cell:hover, .nemo-window .places-treeview .view.cell:selected, .nemo-window .places-treeview iconview.cell:selected,
+  .nemo-window .places-treeview iconview.cell:hover,
   .nemo-window .places-treeview iconview.cell:selected {
     background: #32363e;
     color: #ffffff; }

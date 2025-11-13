@@ -5547,6 +5547,12 @@ datechooser .circular.day.text-button {
     background: rgba(255, 255, 255, 0.3);
     text-shadow: none;
     font-weight: bold; }
+datechooser .weekday, datechooser .weeknum {
+  color: #6d7077; }
+datechooser .weeknum {
+  background-color: #252831; }
+datechooser .current-week {
+  background-color: rgba(109, 112, 119, 0.1); }
 
 agenda-view list.background {
   padding: 8px; }

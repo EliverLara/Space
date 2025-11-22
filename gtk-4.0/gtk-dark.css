@@ -5527,9 +5527,6 @@ window.background.budgie-settings-window.csd > box.horizontal > stack > scrolled
 .color-light.timed label, .color-light .event-popover label {
   color: #C3C7D1;
   opacity: 1; }
-.color-light label {
-  color: #16181d;
-  opacity: 1; }
 
 /*******************
  * Calendar sidebar *
@@ -5571,7 +5568,8 @@ agenda-view list.background:backdrop,
 .calendar-list:backdrop {
   background-color: #16181d; }
 
-popover datechooser {
+popover datechooser,
+popover .calendars-list {
   background-color: transparent; }
 
 /******************************

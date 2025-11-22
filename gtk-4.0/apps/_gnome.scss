@@ -155,10 +155,10 @@
     color: $fg_color;
     opacity: 1;
   }
-  & label {
-    color: $bg_color;
-    opacity: 1;
-  }
+  // & label {
+  //   color: $fg_color;
+  //   opacity: 1;
+  // }
 }
 
 /*******************
@@ -198,7 +198,12 @@ agenda-view list.background,
   &, &:backdrop { background-color: $sidebar_bg_color; }
 }
 
-popover datechooser { background-color: transparent; }
+popover {
+  datechooser,
+  .calendars-list {
+    background-color: transparent;
+  }
+}
 
 /******************************
  * Gnome system monitor graph *

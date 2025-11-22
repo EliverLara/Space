@@ -5522,9 +5522,6 @@ window.background.budgie-settings-window.csd > box.horizontal > stack > scrolled
 .color-light.timed label, .color-light .event-popover label {
   color: #C3C7D1;
   opacity: 1; }
-.color-light label {
-  color: #16181d;
-  opacity: 1; }
 
 /*******************
  * Calendar sidebar *
@@ -5562,6 +5559,10 @@ agenda-view list.background {
   agenda-view list.background headerbar .no-events.subtitle,
   headerbar agenda-view list.background .no-events.subtitle {
     color: #C3C7D1; }
+
+popover datechooser,
+popover .calendars-list {
+  background-color: transparent; }
 
 /******************************
  * Gnome system monitor graph *

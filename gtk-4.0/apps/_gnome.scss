@@ -155,10 +155,10 @@
     color: $fg_color;
     opacity: 1;
   }
-  & label {
-    color: $bg_color;
-    opacity: 1;
-  }
+  // & label {
+  //   color: $fg_color;
+  //   opacity: 1;
+  // }
 }
 
 /*******************
@@ -192,6 +192,13 @@ agenda-view list.background {
   padding: 8px;
   .caption-heading, .dim-label.no-events {
     color: $headerbar_fg_color;
+  }
+}
+
+popover {
+  datechooser,
+  .calendars-list {
+    background-color: transparent;
   }
 }
 

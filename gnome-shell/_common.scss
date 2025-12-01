@@ -699,8 +699,9 @@ $slider_size: 19px;
 
   .switcher-list .item-box {
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 12px;
     background-color: transparent;
+    color: $_bubble_fg_color;
   }
 
   .switcher-list .item-box:outlined {

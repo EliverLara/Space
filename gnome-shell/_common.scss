@@ -1524,7 +1524,7 @@ $slider_size: 19px;
     border-radius: 7px;
     padding: 4px 12px;
     color: black;
-    background-color: transparentize($red,0.25);
+    background-color: transparentize($osd_bg_color,0.25);
     text-align: center;
     -x-offset: 8px;
   }

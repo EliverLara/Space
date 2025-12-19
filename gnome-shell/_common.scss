@@ -1435,9 +1435,10 @@ $slider_size: 19px;
   .window-caption {
     spacing: 20px;
     color: $fg_color;
-    background-color: transparentize($osd_bg_color, .1);
-    border-radius: 2px;
+    background-color: $bg_color;
+    border-radius: 8px;
     padding: 4px 8px;
+    border-color: $borders_color;
   }
 
   //search entry
@@ -1523,7 +1524,7 @@ $slider_size: 19px;
     border-radius: 7px;
     padding: 4px 12px;
     color: black;
-    background-color: transparentize($osd_bg_color,0.25);
+    background-color: transparentize($red,0.25);
     text-align: center;
     -x-offset: 8px;
   }

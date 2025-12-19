@@ -1228,8 +1228,8 @@ StScrollBar {
 .window-caption {
   spacing: 20px;
   color: white;
-  background-color: rgba(22, 24, 29, 0.63);
-  border-radius: 2px;
+  background-color: #16181d;
+  border-radius: 8px;
   padding: 4px 8px; }
 
 .search-entry {

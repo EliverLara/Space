@@ -234,18 +234,22 @@ headerbar .subtitle {
   opacity: 0.55;
   text-shadow: none; }
 
-assistant .sidebar {
-  background-color: #1c1f25;
+window.assistant .sidebar {
+  background-color: #16181d;
   border-top: 1px solid #414348; }
-  assistant .sidebar:backdrop {
+  window.assistant .sidebar:backdrop {
     background-color: #1f2128;
     border-color: #3d3f44; }
-assistant.csd .sidebar {
+window.assistant.csd .sidebar {
   border-top-style: none; }
-assistant .sidebar label {
+window.assistant .sidebar label {
   padding: 6px 12px; }
-assistant .sidebar label.highlight {
-  background-color: #393b41; }
+window.assistant .sidebar label.highlight {
+  background-color: #32363e;
+  color: #ffffff; }
+
+window.aboutdialog image.large-icons {
+  -gtk-icon-size: 128px; }
 
 .app-notification,
 .app-notification.frame, .osd .scale-popup, .osd popover.background > arrow,
@@ -2833,28 +2837,6 @@ menuitem radio {
 .scale-popup button:hover {
   background-color: rgba(195, 199, 209, 0.1);
   border-radius: 5px; }
-
-/************
-* Assistant *
-*************/
-assistant {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px; }
-  assistant .sidebar {
-    background-color: #1c1f25;
-    border-top: 1px solid #414348;
-    border-bottom-left-radius: 4px; }
-    assistant .sidebar:backdrop {
-      background-color: #1f2128;
-      border-color: #3d3f44; }
-  assistant.csd .sidebar {
-    border-top-style: none; }
-  assistant .sidebar GtkLabel,
-  assistant .sidebar label {
-    padding: 6px 12px; }
-  assistant .sidebar GtkLabel.highlight,
-  assistant .sidebar label.highlight {
-    background-color: #393b41; }
 
 /*************
  * Notebooks *

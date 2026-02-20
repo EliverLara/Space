@@ -1411,12 +1411,13 @@ StScrollBar {
   transition-duration: 100ms;
   text-align: center;
   box-shadow: none;
-  border-radius: 12px; }
+  border-radius: 16px;
+  padding: 8px; }
 
 /* App Folders */
 .app-well-app.app-folder, .app-folder .overview-icon {
   background-color: #b3b3b3;
-  border-radius: 12px; }
+  border-radius: 16px; }
 
 .app-folder-dialog {
   background-color: rgba(243, 243, 243, 0.9);

@@ -1606,13 +1606,14 @@ $slider_size: 19px;
     transition-duration: 100ms;
     text-align: center;
     box-shadow: none;
-    border-radius: 12px;
+    border-radius: 16px;
+    padding: 8px;
   }
 
   /* App Folders */
 .app-well-app.app-folder, .app-folder .overview-icon {
   background-color: darken($bg_color, 25%);
-  border-radius: 12px;
+  border-radius: 16px;
 }
 // expanded folder
 .app-folder-dialog { //style like the dash

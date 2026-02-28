@@ -1567,29 +1567,42 @@ $slider_size: 19px;
   .app-well-app.app-folder,
   .show-apps,
   .grid-search-result,
-  .overview-tile,
-  .dash-item-container .overview-tile {
+  .overview-tile {
     background-color: transparent;
     border: none;
-    & .overview-icon {
-      @extend %icon_tile;
-    }
-    &:active .overview-icon,
-    &:checked .overview-icon {
-      background-color: transparentize(darken($osd_bg_color,7%),.1);
-      box-shadow: inset $depth2;
+  
+    @extend %icon_tile;
+    
+    &:active,
+    &:checked {
+      background-color: darken($bg_color, 18%);
       color: black;
     }
-    &:hover .overview-icon,
-    &:focus .overview-icon,
-    &:selected .overview-icon {
-      background-color: darken($bg_color, 15%);
+    &:hover,
+    &:focus,
+    &:selected {
+      background-color: darken($bg_color, 18%);
       transition-duration: 0ms;
       border-image: none;
       background-image: none;
     }
-
   }
+
+  // items on the dash
+  .dash-item-container {
+    .show-apps,
+    .overview-tile {
+      &, .overview-icon { @extend %icon_tile; }
+      &:hover .overview-icon,
+      &:focus .overview-icon,
+      &:selected .overview-icon,
+      &:active .overview-icon,
+      &:checked .overview-icon{
+        background-color: lighten($bg_color, 18%);
+      }
+    }
+  }
+
 
   .app-well-app-running-dot, .app-grid-running-dot { //running apps indicator
     width: 13px; height: 3px;
@@ -1607,12 +1620,11 @@ $slider_size: 19px;
     text-align: center;
     box-shadow: none;
     border-radius: 16px;
-    padding: 8px;
   }
 
   /* App Folders */
-.app-well-app.app-folder, .app-folder .overview-icon {
-  background-color: darken($bg_color, 25%);
+.app-well-app.app-folder, .app-folder {
+  background-color: darken($bg_color, 15%);
   border-radius: 16px;
 }
 // expanded folder

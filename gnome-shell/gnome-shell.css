@@ -962,6 +962,9 @@ StScrollBar {
 .message-list {
   border: none; }
 
+.message-list-placeholder, .event-placeholder {
+  color: rgba(0, 0, 0, 0.45); }
+
 .message-title, .message-content, .message-body {
   color: #000; }
 

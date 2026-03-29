@@ -1002,7 +1002,6 @@ $slider_size: 19px;
       text-shadow: none;
     }
 
-
     .world-clocks-grid {
       spacing-rows: 0.4em;
     }
@@ -1127,6 +1126,9 @@ $slider_size: 19px;
       /* Message list */
       .message-list {
         border: none;
+      }
+      .message-list-placeholder, .event-placeholder {
+        color: transparentize($fg_color, .55);
       }
       .message-title, .message-content, .message-body {
         color:$fg_color;
